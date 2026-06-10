@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
+
 export default function ServingCitiesSection() {
   const cities = [
     {
@@ -28,11 +29,11 @@ export default function ServingCitiesSection() {
       name: 'La Quinta',
     },
   ]
-  const [selectedCity, setSelectedCity] = useState<number | null>(2)
+  const [selectedCity, setSelectedCity] = useState<number | null>(null)
+
   return (
     <section className="relative w-full bg-[#E8F5F8] py-16 lg:py-24 overflow-hidden">
       {/* Palm Tree - Top Left */}
-
       <div className="relative max-w-[1441px] w-[95%] mx-auto">
         <Image
           src="/tree.png"
@@ -56,8 +57,8 @@ export default function ServingCitiesSection() {
           {cities.map((city) => (
             <div
               key={city.id}
-              onClick={() => setSelectedCity(city.id)}
-              className={`${selectedCity === city.id ? 'bg-[#F29AA7]' : 'bg-white'} rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-shadow`}
+              onMouseEnter={() => setSelectedCity(city.id)}
+              className={`${selectedCity === city.id ? 'bg-[#F29AA7]' : 'bg-white'} rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300`}
             >
               <div className="flex flex-col gap-5 justify-center items-center w-50 h-50 ">
                 <Image
