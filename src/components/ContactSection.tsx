@@ -26,7 +26,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="w-full bg-[#E8F5F8] py-16 ">
+    <section className="w-full bg-[#0080801A] py-16 ">
       <div className=" relative max-w-[1441px] w-[95%] mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -42,7 +42,7 @@ export default function ContactSection() {
         {/* Form Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
           {/* Left Illustration */}
-          <div className="order-2 lg:order-1 flex justify-center lg:ml-6">
+          <div className="order-2 lg:order-1 flex justify-center lg:ml-4">
             <div className="w-full  rounded-3xl ">
               <Image src="/contact_us.png" alt="" width={611} height={511} />
             </div>
