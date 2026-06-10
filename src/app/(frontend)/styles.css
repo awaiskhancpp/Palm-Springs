@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @font-face { 
   font-family: 'Futura-Black';
-  src: url('/fonts/Futura-Black-bold.ttf') format('truetype');
+  src: url('/fonts/Futura-Black-Bold.ttf') format('truetype');
   font-weight: 900; font-display: swap;
   } 
   @font-face { 
@@ -11,7 +11,7 @@
   } 
   @font-face { 
     font-family: 'Futura-Black-Bold';
-    src: url('/fonts/Futura_extra_black_font.ttf') format('truetype');
+    src: url('/fonts/futura_extra_black_font.ttf') format('truetype');
     font-display: swap;
   } 
   @theme 
