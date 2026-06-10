@@ -1,11 +1,14 @@
 import Image from 'next/image'
 export default function Testimonials() {
   return (
-    <section className="relative w-full bg-[#F5F5DC] py-16 lg:py-24 overflow-hidden">
-      {/* Decorative palm trees background */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#FEF5E7] to-transparent opacity-50"></div>
+    <section className="w-full bg-[#F5F5DC] py-16 lg:py-24 overflow-hidden">
+      <div className="relative max-w-[1441px] w-[95%] mx-auto relative z-10">
+        <div className="absolute -right-22 top-0 w-[80px] h-[80px] z-10">
+          <div className="absolute w-[20.39px] h-[20.39px] mt-14 mr-2 rounded-full rotate-[81.06deg] bg-[radial-gradient(circle_at_50%_50%,#00B8B8_0%,#008080_100%)]" />
+          <div className="absolute w-[40.77px] h-[40.77px]  rounded-full rotate-[81.06deg] bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]" />
+        </div>
+        <div className="absolute -right-20 bottom-0 w-[88.25px] h-[88.25px] rounded-full bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]"></div>
 
-      <div className="max-w-[1441px] w-[95%] mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Illustration */}
           <div className="hidden md:flex justify-center">

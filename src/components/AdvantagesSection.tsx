@@ -25,9 +25,19 @@ export default function AdvantagesSection() {
   ]
 
   return (
-    <section className="w-full bg-[#0080801A] py-16">
-      <div className="max-w-[1441px] w-[95%] mx-auto">
-        {/* Section Header */}
+    <section className="w-full bg-[#0080801A] py-16 overflow-hidden">
+      <div className="relative max-w-[1441px] w-[95%] mx-auto">
+        <Image
+          src="/tree_right.png"
+          alt=""
+          width={200}
+          height={240}
+          className="absolute -top-16 -right-14"
+        />
+        <div className="absolute left-20 top-0 w-[53.18px] h-[73.36px] relative">
+          <div className="w-[40.77px] h-[40.77px] rounded-full bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]" />
+          <div className="w-[20.39px] h-[20.39px] mt-4 ml-10 rounded-full bg-[radial-gradient(circle_at_50%_50%,#00B8B8_0%,#008080_100%)]" />
+        </div>
         <div className="text-center mb-16">
           <h2 className="font-futura-black text-[42px] leading-[100%] mb-4">
             The <span className="text-primary">1REALTOUR.com</span> Advantage
@@ -42,7 +52,7 @@ export default function AdvantagesSection() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {advantages.map((advantage) => (
             <div
               key={advantage.id}

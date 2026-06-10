@@ -42,15 +42,12 @@ export default function AttractionsSection() {
       <div className="absolute top-3 left-0 w-20 sm:w-28 lg:w-32 opacity-40">
         <Image src="/tree.png" alt="" width={290} height={650} />
       </div>
-
-      {/* Orange circle decoration bottom right */}
-      <div
-        className="absolute bottom-10 right-10 w-24 h-24 rounded-full"
-        style={{ background: 'linear-gradient(180deg, #FFA500 0%, #EA7000 100%)' }}
-        opacity-70
-      ></div>
-
-      <div className="max-w-[1441px] w-[95%] mx-auto relative z-10">
+      <div className="relative max-w-[1441px] w-[95%] mx-auto relative z-10">
+        <div className="absolute -left-30 top-1/2 w-30 h-30 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
+        <div
+          className="absolute bottom-10 -right-14 w-10 h-10 rounded-full"
+          style={{ background: 'linear-gradient(180deg, #FFA500 0%, #EA7000 100%)' }}
+        ></div>
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-futura-black text-[30px] sm:text-[36px] lg:text-[42px] mb-4">

@@ -26,7 +26,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="w-full bg-[#E8F5F8] py-16 lg:py-24">
+    <section className="w-full bg-[#E8F5F8] py-16 ">
       <div className=" relative max-w-[1441px] w-[95%] mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -40,16 +40,16 @@ export default function ContactSection() {
         </div>
 
         {/* Form Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
           {/* Left Illustration */}
-          <div className="flex justify-center">
+          <div className="order-2 lg:order-1 flex justify-center lg:ml-6">
             <div className="w-full  rounded-3xl ">
               <Image src="/contact_us.png" alt="" width={611} height={511} />
             </div>
           </div>
 
           {/* Right Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="order-1 lg:order-2 flex flex-col gap-6 mb-3">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
                 <label

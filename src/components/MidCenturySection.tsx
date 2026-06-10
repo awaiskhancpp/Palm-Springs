@@ -2,9 +2,17 @@ import Image from 'next/image'
 
 export default function MidCenturySection() {
   return (
-    <section className="relative w-full bg-[#0080801A] py-16 overflow-hidden">
-      <div className="max-w-[1441px] w-[95%] mx-auto">
-        <Image src={} alt="" width={} height={} />
+    <section className=" w-full bg-[#0080801A] py-16 overflow-hidden">
+      <div className="relative max-w-[1441px] w-[95%] mx-auto">
+        <Image
+          src="/tree_right.png"
+          alt=""
+          width={200}
+          height={207}
+          className="absolute -right-10 -top-18"
+        />
+        <div className="absolute -right-20 top-[70%] w-[77.72px] h-[77.72px] rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
+        <div className="absolute top-[84%] -left-3 md:left-10 lg:left-4 lg:top-[70%] w-[99px] h-[99px] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
           {/* Left Image Section */}
           <div className="order-2 lg:order-1 relative w-full flex justify-center xl:ml-10">

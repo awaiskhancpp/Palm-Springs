@@ -32,17 +32,15 @@ export default function ServingCitiesSection() {
   return (
     <section className="relative w-full bg-[#E8F5F8] py-16 lg:py-24 overflow-hidden">
       {/* Palm Tree - Top Left */}
-      <div className="absolute top-0 left-0 -z-10 opacity-40">
+
+      <div className="relative max-w-[1441px] w-[95%] mx-auto">
         <Image
           src="/tree.png"
           alt="Palm tree decoration"
           width={200}
           height={300}
-          className="w-32 md:w-48 h-auto"
+          className="absolute -top-10 -left-12 rotate-1"
         />
-      </div>
-
-      <div className="relative max-w-[1441px] w-[95%] mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-futura-black text-[36px] md:text-[46px] mb-4 leading-[55px]">
@@ -54,8 +52,7 @@ export default function ServingCitiesSection() {
           </p>
         </div>
 
-        {/* Cities Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-5xl mx-auto">
           {cities.map((city) => (
             <div
               key={city.id}
@@ -80,10 +77,10 @@ export default function ServingCitiesSection() {
         </div>
 
         {/* Detail Section */}
-        <div className="relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#F5F5DC] rounded-[20px] p-8 md:p-10 relative z-20">
+        <div className="relative ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#F5F5DC] rounded-[20px] p-8 md:p-10 relative">
             {/* Left Content */}
-            <div className="flex flex-col gap-4 md:gap-6 relative z-20">
+            <div className="flex flex-col gap-4 md:gap-6 relative ">
               <h2 className="font-futura-black text-[28px] md:text-[38px] leading-[1.2] text-primary">
                 Cathedral City
               </h2>
@@ -100,7 +97,7 @@ export default function ServingCitiesSection() {
             </div>
 
             {/* Right Image */}
-            <div className="flex justify-center relative z-20">
+            <div className="flex justify-center relative">
               <div className="w-full max-w-md rounded-3xl overflow-hidden">
                 <Image
                   src="/cathedral.png"
@@ -113,14 +110,12 @@ export default function ServingCitiesSection() {
             </div>
 
             {/* Small Orange Circle - Right Side */}
-            <div className="absolute top-8 md:top-12 right-4 md:-right-12 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full z-30" />
+            <div className="absolute top-8 md:top-12 right-4 md:-right-12 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full " />
 
             {/* Small Teal Circle - Right Side, Below Orange */}
-            <div className="absolute top-16 md:top-24 right-6 md:-right-6 w-4 h-4 md:w-5 md:h-5 bg-[#008080] rounded-full z-30" />
+            <div className="absolute top-16 md:top-24 right-6 md:-right-6 w-4 h-4 md:w-5 md:h-5 bg-[#008080] rounded-full " />
           </div>
-
-          {/* Large Orange Circle - Bottom Left, Behind */}
-          <div className="absolute bottom-0 -left-16 md:-left-20 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full -z-10" />
+          <div className="absolute bottom-0 -left-16 md:-left-20 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full " />
         </div>
       </div>
     </section>
