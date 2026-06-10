@@ -60,7 +60,7 @@ export default function AdvantagesSection() {
 
               <a
                 href="#"
-                className="font-avenir-lt flex gap-2 items-center text-[14px] text-[#FF2243] hover:text-[#E85A8E] font-semibold"
+                className="font-avenir-lt flex gap-2 underline items-center text-[14px] text-[#FF2243] hover:text-[#E85A8E] font-semibold"
               >
                 Learn more
                 <Image src="/arrow_red.svg" alt="" width={14} height={14} />

@@ -13,8 +13,8 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="w-full shadow-sm bg-[#F5F5DC] sticky top-0 z-50 ">
-      <div className="max-w-[1441px] w-[95%] mx-auto py-4 md:py-6">
+    <nav className="w-full  bg-[#F5F5DC] sticky top-0 z-50 ">
+      <div className="max-w-[1441px] w-[95%] mx-auto py-4 ">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <h2 className="font-futura-black text-[26px] uppercase font-bold leading-[1]">

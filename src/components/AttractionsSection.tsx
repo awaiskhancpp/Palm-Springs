@@ -37,9 +37,9 @@ export default function AttractionsSection() {
   ]
 
   return (
-    <section className="relative w-full bg-[#0080801A] py-16 lg:py-24 overflow-hidden">
+    <section className="relative w-full bg-[#0080801A] py-16  overflow-hidden">
       {/* Palm tree decoration top left */}
-      <div className="absolute top-0 left-1 w-32 h-32 opacity-30">
+      <div className="absolute top-3 left-0 w-20 sm:w-28 lg:w-32 opacity-40">
         <Image src="/tree.png" alt="" width={290} height={650} />
       </div>
 
@@ -53,7 +53,7 @@ export default function AttractionsSection() {
       <div className="max-w-[1441px] w-[95%] mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-futura-black text-[42px] mb-4">
+          <h2 className="font-futura-black text-[30px] sm:text-[36px] lg:text-[42px] mb-4">
             Showcasing <span className="text-secondary">Local Attractions</span>
           </h2>
           <p className="font-avenir-lt text-[16px] text-[#787878] leading-[26px] max-w-4xl mx-auto">
@@ -64,11 +64,14 @@ export default function AttractionsSection() {
         </div>
 
         {/* Cards Grid - 2x2 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {attractions.map((attraction) => (
-            <div key={attraction.id} className="flex items-stretch gap-0">
+            <div
+              key={attraction.id}
+              className="flex items-stretch bg-white rounded-[20px] overflow-hidden"
+            >
               {/* Image with curved border left */}
-              <div className="relative w-1/2 rounded-l-[20px] bg-white overflow-hidden">
+              <div className="relative w-[40%] sm:w-1/2 min-h-[260px]">
                 <Image
                   src={attraction.img}
                   alt=".."
@@ -79,14 +82,14 @@ export default function AttractionsSection() {
               </div>
 
               {/* Content */}
-              <div className="w-1/2 bg-white rounded-r-[20px]  p-6 flex flex-col justify-center">
+              <div className="w-[60%] sm:w-1/2 p-5 sm:p-6 flex flex-col justify-center">
                 <div className="w-13 h-13 rounded-lg bg-[#0080801A] flex items-center justify-center">
                   <Image src={attraction.icon} alt="icon" width={32} height={32} />
                 </div>
-                <h3 className="font-futura-black-bold text-[24px] mb-3 mt-3 text-primary leading-tight">
+                <h3 className="font-futura-black-bold text-[20px] lg:text-[24px] mb-3 mt-3 text-primary leading-tight">
                   {attraction.title}
                 </h3>
-                <p className="font-avenir-lt text-[16px] leading-[26px] text-[#666666] leading-relaxed">
+                <p className="font-avenir-lt text-[14px] lg:text-[16px] leading-[24px] lg:leading-[26px] text-[#666666]">
                   {attraction.description}
                 </p>
               </div>
