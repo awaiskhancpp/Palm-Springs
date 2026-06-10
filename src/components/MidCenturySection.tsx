@@ -4,6 +4,7 @@ export default function MidCenturySection() {
   return (
     <section className="relative w-full bg-[#0080801A] py-16 overflow-hidden">
       <div className="max-w-[1441px] w-[95%] mx-auto">
+        <Image src={} alt="" width={} height={} />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
           {/* Left Image Section */}
           <div className="order-2 lg:order-1 relative w-full flex justify-center xl:ml-10">
