@@ -4,12 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer
-      className="relative bg-[#0080801A] w-full py-6 md:py-12 rounded-t-3xl overflow-hidden"
-      style={{
-        clipPath: 'polygon(1% 0, 100% 0%, 100% 100%, 0% 100%)',
-      }}
-    >
+    <footer className="relative bg-[#0080801A] w-full py-6 md:py-12 rounded-t-3xl overflow-hidden">
       <Image
         src="/footer-bg.jpg"
         alt="Footer Background"

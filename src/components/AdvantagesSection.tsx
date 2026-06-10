@@ -52,11 +52,11 @@ export default function AdvantagesSection() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {advantages.map((advantage) => (
             <div
               key={advantage.id}
-              className="flex flex-col h-full gap-4 p-8 bg-gradient-to-br from-[#F0F8F8] to-white rounded-2xl border border-[#0000004D] hover:border-opacity-40 transition-all"
+              className="flex flex-col h-full gap-2 pl-4 py-6 pr-14  rounded-2xl border border-[#0000004D] hover:border-opacity-40 transition-all"
             >
               <div className="w-[57px] h-[54px] rounded-[5px] flex justify-center items-center bg-primary">
                 <Image src={advantage.icon} alt="" width={36} height={37} />
@@ -64,13 +64,13 @@ export default function AdvantagesSection() {
 
               <h3 className="font-futura-black text-[24px] text-[#232323]">{advantage.title}</h3>
 
-              <p className="flex-grow font-avenir-lt text-[16px] leading-[28px] text-[#333333]">
+              <p className="flex-grow font-avenir-lt capitalize text-[16px] leading-[28px] text-[#333333]">
                 {advantage.description}
               </p>
 
               <a
                 href="#"
-                className="font-avenir-lt flex gap-2 underline items-center text-[14px] text-[#FF2243] hover:text-[#E85A8E] font-semibold"
+                className="font-avenir-lt flex gap-2 underline capitalize underline-offset-2 items-center text-[14px] text-[#FF2243] hover:text-[#E85A8E] font-semibold"
               >
                 Learn more
                 <Image src="/arrow_red.svg" alt="" width={14} height={14} />

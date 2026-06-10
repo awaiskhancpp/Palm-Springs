@@ -15,9 +15,9 @@ export default function HeroSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="flex flex-col gap-4">
+          <div className="order-2 lg:order-1 flex flex-col gap-4">
             {/* Welcome Badge */}
-            <div className="inline-flex items-center gap-2 border border-[#232323] rounded-full px-6 md:px-8 py-2.5 w-fit">
+            <div className="inline-flex items-center gap-2  border border-[#232323] rounded-full px-4 md:px-8 py-2 md:py-2.5 w-fit">
               <span className="font-avenir-lt font-semibold text-[13px] md:text-[16px] text-[#232323]">
                 Welcome to 1REALTOUR.com
               </span>
@@ -56,12 +56,12 @@ export default function HeroSection() {
             </button>
           </div>
 
-          <div className="relative flex justify-center items-center mt-8 lg:mt-0">
+          <div className="order-1 lg:order-2 relative flex justify-center items-center mt-8 lg:mt-0">
             <Image
               src="/tropical.png"
               alt=""
-              width={580}
-              height={500}
+              width={620}
+              height={490}
               className="w-full max-w-[520px] xl:max-w-[620px] h-auto"
             />
           </div>

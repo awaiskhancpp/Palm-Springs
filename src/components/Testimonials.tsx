@@ -12,7 +12,7 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Illustration */}
           <div className="hidden md:flex justify-center">
-            <div className="w-full h-[400px] bg-gradient-to-br from-pink-100 to-orange-50 rounded-3xl flex items-center justify-center">
+            <div className="w-full h-[400px]  rounded-3xl flex items-center justify-center">
               <Image
                 src="/falmingo.png"
                 alt=""

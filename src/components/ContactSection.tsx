@@ -22,12 +22,11 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
-    // Add your form submission logic here
   }
 
   return (
     <section className="w-full bg-[#0080801A] py-16 ">
-      <div className=" relative max-w-[1441px] w-[95%] mx-auto">
+      <div className="relative max-w-[1441px] w-[95%] mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-futura-black-bold text-[#232323] text-[46px] leading-[48px] mb-4">
@@ -40,11 +39,17 @@ export default function ContactSection() {
         </div>
 
         {/* Form Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:max-w-[1254px] mx-auto gap-3 items-center">
           {/* Left Illustration */}
-          <div className="order-2 lg:order-1 flex justify-center lg:ml-4">
-            <div className="w-full  rounded-3xl ">
-              <Image src="/contact_us.png" alt="" width={611} height={511} />
+          <div className="order-2 lg:order-1 flex justify-center w-full lg:w-auto">
+            <div className="w-full lg:max-w-[611px] rounded-3xl">
+              <Image
+                src="/contact_us.png"
+                alt=""
+                width={611}
+                height={511}
+                className="w-full h-auto"
+              />
             </div>
           </div>
 
