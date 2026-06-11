@@ -40,6 +40,7 @@
     "@types/node": "22.19.9",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
+    "@types/react-slick": "^0.23.13",
     "@vitejs/plugin-react": "4.5.2",
     "autoprefixer": "^10.5.0",
     "eslint": "^9.16.0",
