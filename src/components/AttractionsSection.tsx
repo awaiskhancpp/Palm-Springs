@@ -1,10 +1,22 @@
+'use client'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 
 export default function AttractionsSection() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024)
+    const handleResize = () => setIsMobile(window.innerWidth < 1024)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const attractions = [
     {
       id: 1,
       img: '/resort.png',
+      imgMobile: '/resort_full.png',
       icon: '/resort_icon.png',
       title: 'Luxury Resorts and Boutique Hotels',
       description:
@@ -13,6 +25,7 @@ export default function AttractionsSection() {
     {
       id: 2,
       img: '/dinning.png',
+      imgMobile: '/dining_full.png',
       icon: '/resort_icon.png',
       title: 'Fine Dining and Casual Eateries',
       description:
@@ -21,6 +34,7 @@ export default function AttractionsSection() {
     {
       id: 3,
       img: '/shopping.png',
+      imgMobile: '/shopping_full.png',
       icon: '/shopping_icon.png',
       title: 'Shopping Districts and Boutiques',
       description:
@@ -29,6 +43,7 @@ export default function AttractionsSection() {
     {
       id: 4,
       img: '/tourist.png',
+      imgMobile: '/tourist_full.png',
       icon: '/tour_icon.png',
       title: 'Notable Tourist Destinations',
       description:
@@ -37,18 +52,13 @@ export default function AttractionsSection() {
   ]
 
   return (
-    <section className="relative w-full bg-[#0080801A] py-16  overflow-hidden">
-      {/* Palm tree decoration top left */}
-      <div className="absolute top-3 left-0 w-20 sm:w-28 lg:w-32 opacity-40">
-        <Image src="/tree.png" alt="" width={290} height={650} />
-      </div>
+    <section className="relative w-full bg-[#0080801A] py-16 overflow-hidden z-20">
       <div className="relative max-w-[1441px] w-[95%] mx-auto relative z-10">
         <div className="absolute -left-30 top-1/2 w-30 h-30 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
         <div
           className="absolute bottom-10 -right-14 w-10 h-10 rounded-full"
           style={{ background: 'linear-gradient(180deg, #FFA500 0%, #EA7000 100%)' }}
         ></div>
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-futura-black text-[30px] sm:text-[36px] lg:text-[42px] mb-4">
             Showcasing <span className="text-secondary">Local Attractions</span>
@@ -60,17 +70,15 @@ export default function AttractionsSection() {
           </p>
         </div>
 
-        {/* Cards Grid - 2x2 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {attractions.map((attraction) => (
             <div
               key={attraction.id}
-              className="flex items-stretch bg-white rounded-[20px] overflow-hidden"
+              className="flex lg:flex-row flex-col items-stretch bg-white rounded-lg overflow-hidden"
             >
-              {/* Image with curved border left */}
-              <div className="relative w-[40%] sm:w-1/2 min-h-[260px]">
+              <div className="relative lg:w-[40%] w-full lg:min-h-[260px] min-h-[160px] sm:min-h-[180px]">
                 <Image
-                  src={attraction.img}
+                  src={isMobile ? attraction.imgMobile : attraction.img}
                   alt=".."
                   width={280}
                   height={200}
@@ -78,17 +86,18 @@ export default function AttractionsSection() {
                 />
               </div>
 
-              {/* Content */}
-              <div className="w-[60%] sm:w-1/2 p-5 sm:p-6 flex flex-col justify-center">
-                <div className="w-13 h-13 rounded-lg bg-[#0080801A] flex items-center justify-center">
+              <div className="lg:w-1/2 w-full p-5 sm:p-6 flex lg:flex-col flex-row gap-3 items-start">
+                <div className="w-13 h-13 rounded-lg bg-[#0080801A] flex items-center justify-center flex-shrink-0">
                   <Image src={attraction.icon} alt="icon" width={32} height={32} />
                 </div>
-                <h3 className="font-futura-black-bold text-[20px] lg:text-[24px] mb-3 mt-3 text-primary leading-tight">
-                  {attraction.title}
-                </h3>
-                <p className="font-avenir-lt text-[14px] lg:text-[16px] leading-[24px] lg:leading-[26px] text-[#666666]">
-                  {attraction.description}
-                </p>
+                <div className="flex flex-col gap-2">
+                  <h3 className="font-futura-black-bold text-[20px] lg:text-[24px] text-primary leading-tight">
+                    {attraction.title}
+                  </h3>
+                  <p className="font-avenir-lt text-[14px] lg:text-[16px] leading-[24px] lg:leading-[26px] text-[#666666]">
+                    {attraction.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

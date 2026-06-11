@@ -1,5 +1,28 @@
+'use client'
 import Image from 'next/image'
+import { useState } from 'react'
+
 export default function Testimonials() {
+  const testimonials = [
+    {
+      id: 1,
+      text: 'Providing local information can enhance the guest experience. Our web designs include detailed sections on nearby attractions, events, and dining options. Additionally, we highlight positive reviews and testimonials, building trust and encouraging new guests to choose your property',
+      image: '/person.png',
+    },
+    {
+      id: 2,
+      text: 'The team transformed our digital presence completely. Their attention to detail and understanding of our market made all the difference. We saw immediate improvements in bookings and customer engagement.',
+      image: '/person.png',
+    },
+    {
+      id: 3,
+      text: 'Outstanding service and exceptional results. They took our vision and brought it to life in ways we never imagined. Highly recommend their expertise and professionalism.',
+      image: '/person.png',
+    },
+  ]
+
+  const [activeSlide, setActiveSlide] = useState(0)
+
   return (
     <section className="w-full bg-[#F5F5DC] py-16 lg:py-24 overflow-hidden">
       <div className="relative max-w-[1441px] w-[95%] mx-auto relative z-10">
@@ -28,23 +51,26 @@ export default function Testimonials() {
             {/* Speech Bubble with Tail */}
             <div className="relative w-full max-w-[450px] sm:max-w-[550px] xl:max-w-[654px] mx-auto">
               <Image
-                src="/message_bubble.png"
+                src="/testimonial_bubble.svg"
                 alt=""
                 width={654}
                 height={300}
                 className="w-full h-auto"
               />
 
-              <p className="absolute inset-0 flex items-center justify-center px-8 sm:px-12 lg:px-10  xl:px-12 text-center text-white font-normal text-[14px] sm:text-[16px] md:text-[18px]  xl:text-[24px] leading-[1.3]">
-                Providing local information can enhance the guest experience. Our web designs
-                include detailed sections on nearby attractions, events, and dining options.
-                Additionally, we highlight positive reviews and testimonials, building trust and
-                encouraging new guests to choose your property
+              <p
+                key={activeSlide}
+                className="absolute inset-0 flex items-center px-8 sm:px-12 lg:px-10  xl:px-12 text-center text-white font-normal text-[14px] sm:text-[16px] md:text-[18px]  xl:text-[24px] leading-[1.3] animate-fadeIn"
+              >
+                {testimonials[activeSlide].text}
               </p>
             </div>
-            <div className="absolute left-2 md:left-[14%] lg:left-2 xl:left-5 2xl:left-10 bottom-1 md:bottom-0 lg:-bottom-1 w-16 h-16 sm:w-20 sm:h-20 xl:w-24 xl:h-24 rounded-full overflow-hidden border-4 border-white">
+            <div
+              key={`img-${activeSlide}`}
+              className="absolute left-2 md:left-[14%] lg:left-2 xl:left-5 2xl:left-10 bottom-1 md:bottom-0 lg:-bottom-2 w-16 h-16 sm:w-20 sm:h-20 xl:w-24 xl:h-24 rounded-full overflow-hidden border-4 border-white animate-slideIn"
+            >
               <Image
-                src="/person.png"
+                src={testimonials[activeSlide].image}
                 alt="author"
                 width={118}
                 height={118}
@@ -53,15 +79,53 @@ export default function Testimonials() {
             </div>
 
             <div className="flex items-center justify-center w-full mr-4">
-              <div className="flex gap-2 items-center pt-4">
-                <div className="w-5 h-5 bg-[#008080] rounded-full"></div>
-                <div className="w-5 h-5 bg-gray-300 rounded-full"></div>
-                <div className="w-5 h-5 bg-gray-300 rounded-full"></div>
+              <div className="flex gap-3 items-center pt-4">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveSlide(index)}
+                    className={
+                      activeSlide === index
+                        ? 'w-6 h-6 bg-[#008080] rounded-full'
+                        : 'w-3 h-3 bg-gray-300 rounded-full'
+                    }
+                  />
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .animate-slideIn {
+          animation: slideIn 0.5s ease-in-out;
+        }
+      `}</style>
     </section>
   )
 }

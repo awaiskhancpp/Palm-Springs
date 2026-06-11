@@ -25,18 +25,18 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <h2 className="font-futura-black text-[26px] uppercase font-bold leading-[1]">
-            <span className="text-primary">Palm </span>
-            <span className="text-secondary">Springs</span>
+            <span className="text-[#008080]">Palm </span>
+            <span className="text-[#FFA500]">Springs</span>
           </h2>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex gap-8">
+          <div className="hidden lg:flex gap-14 lg:max-w-[727px]">
             {links.map((link) => (
               <a
                 key={link.id}
                 href={link.href}
                 onClick={() => setActiveLink(link.id)}
-                className="font-avenir-lt font-extralight text-[24px] text-[#666666] hover:text-secondary transition-colors"
+                className="font-avenir-lt font-extralight text-[24px] text-[#666666] hover:text-[#FFA500] transition-colors"
               >
                 {link.name}
               </a>
@@ -73,7 +73,7 @@ export default function Navbar() {
             isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="flex flex-col gap-4 pt-4 border-t border-[#e0e0e0]">
+          <div className={`flex flex-col gap-4 pt-4 border-t border-[#e0e0e0]`}>
             {links.map((link) => (
               <a
                 key={link.id}
@@ -81,8 +81,8 @@ export default function Navbar() {
                 onClick={() => handleLinkClick(link.id)}
                 className={`font-avenir-lt font-extralight text-[18px] transition-colors ${
                   activeLink === link.id
-                    ? 'text-secondary font-semibold'
-                    : 'text-[#666666] hover:text-secondary'
+                    ? 'text-[#FFA500] font-semibold'
+                    : 'text-[#666666] hover:text-[#FFA500]'
                 }`}
               >
                 {link.name}
