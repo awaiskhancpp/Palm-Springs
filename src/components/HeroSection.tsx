@@ -2,7 +2,7 @@ import Image from 'next/image'
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-[calc(100vh-68px)] xl:min-h-auto bg-beige flex items-center overflow-hidden">
-      <div className="relative max-w-[1441px] w-[95%] mx-auto pt-10 lg:pt-0 pb-0">
+      <div className="relative max-w-[1441px] w-[95%] mx-auto pt-10 mt-8 lg:pt-0 pb-0">
         <div className="absolute w-[83.9px] h-[83.9px] left-1/2 md:left-[30%] lg:left-[20%] -bottom-6 rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
 
         <div className="absolute top-17 -right-17 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
