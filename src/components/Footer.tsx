@@ -6,14 +6,14 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#0080801A] w-full py-6 md:py-12 rounded-t-3xl overflow-hidden">
       <Image
-        src="/footer-bg.jpg"
+        src="/Footer_img.png"
         alt="Footer Background"
         fill
-        className="object-cover rounded-t-3xl absolute inset-0"
+        className="object-cover rounded-t-3xl "
         priority
       />
 
-      <div className="absolute inset-0 bg-[rgba(245,245,220,0.86)] rounded-t-3xl" />
+      {/* <div className="absolute inset-0 bg-[rgba(245,245,220,0.86)] rounded-t-3xl" /> */}
 
       <div className="relative z-10 max-w-[1441px] w-[95%] mx-auto px-4 md:px-0">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full h-[1px] md:h-[2px] bg-[#1E1E1E] mt-4 md:mt-6" />
+      <div className="relative z-10 w-[99vw]  mx-auto h-[1px] md:h-[2px] bg-[#1E1E1E] mt-4 md:mt-6" />
 
       <div className="relative z-10 text-center mt-4 md:mt-6 px-4">
         <p className="font-avenir-lt text-[12px] sm:text-[13px] md:text-[14px] font-normal text-[#232323]">
