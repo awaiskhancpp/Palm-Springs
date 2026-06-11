@@ -34,7 +34,7 @@ export default function AdvantagesSection() {
         className="absolute top-4 -right-2"
       />
       <div className="relative max-w-[1441px] w-[95%] mx-auto">
-        <div className="absolute left-20 top-0 w-[53.18px] h-[73.36px] relative">
+        <div className="absolute left-10 top-0 xl:top-20 w-[53.18px] h-[73.36px] relative">
           <div className="w-[40.77px] h-[40.77px] rounded-full bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]" />
           <div className="w-[20.39px] h-[20.39px] mt-4 ml-10 rounded-full bg-[radial-gradient(circle_at_50%_50%,#00B8B8_0%,#008080_100%)]" />
         </div>
