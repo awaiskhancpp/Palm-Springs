@@ -54,7 +54,10 @@ export default function ContactSection() {
           </div>
 
           {/* Right Form */}
-          <form onSubmit={handleSubmit} className="order-1 lg:order-2 flex flex-col gap-6 mb-3">
+          <form
+            onSubmit={handleSubmit}
+            className="order-1 lg:order-2 flex flex-col gap-6 mb-3 w-full"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
                 <label
@@ -153,17 +156,17 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="bg-[#008080] hover:bg-[#006666] w-fit  text-white font-avenir-lt font-semibold px-8 py-3 rounded transition-colors w-full md:w-fit"
+              className="bg-primary hover:bg-[#006666] text-white font-avenir-lt font-semibold px-8 py-3 rounded transition-colors w-full"
             >
               Submit
             </button>
           </form>
         </div>
-        <div className="absolute right-0">
-          <div className="bg-radial from-[#00B8B8] to-[#008080] rounded-full w-5 h-5" />
+        <div className=" absolute right-0 -bottom-12 xl:bottom-1">
+          <div className="bg-radial from-[#00B8B8] to-[#008080] rounded-full ml-8 w-5 h-5" />
           <div className="bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full w-10 h-10 mt-2" />
         </div>
-        <div className="absolute -bottom-30 left-10 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full w-20 h-20" />
+        <div className=" absolute -bottom-30 left-[20%] bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full w-20 h-20" />
       </div>
     </section>
   )

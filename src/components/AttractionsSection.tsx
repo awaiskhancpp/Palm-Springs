@@ -54,9 +54,9 @@ export default function AttractionsSection() {
   return (
     <section className="relative w-full bg-[#0080801A] py-16 overflow-hidden z-20">
       <div className="relative max-w-[1441px] w-[95%] mx-auto relative z-10">
-        <div className="absolute -left-30 top-1/2 w-30 h-30 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
+        <div className="2xl:hidden absolute -left-30 top-1/2 w-30 h-30 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
         <div
-          className="absolute bottom-10 -right-14 w-10 h-10 rounded-full"
+          className="2xl:hidden absolute bottom-10 -right-14 w-10 h-10 rounded-full"
           style={{ background: 'linear-gradient(180deg, #FFA500 0%, #EA7000 100%)' }}
         ></div>
         <div className="text-center mb-16">
@@ -76,13 +76,13 @@ export default function AttractionsSection() {
               key={attraction.id}
               className="flex lg:flex-row flex-col items-stretch bg-white rounded-lg overflow-hidden"
             >
-              <div className="relative lg:w-[40%] w-full lg:min-h-[260px] min-h-[160px] sm:min-h-[180px]">
+              <div className="relative w-full lg:w-[40%] h-[180px] sm:h-[220px] md:h-[240px] lg:h-auto">
                 <Image
                   src={isMobile ? attraction.imgMobile : attraction.img}
                   alt=".."
                   width={280}
                   height={200}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 

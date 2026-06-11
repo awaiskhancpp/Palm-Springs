@@ -89,15 +89,14 @@ export default function ServingCitiesSection() {
 
   return (
     <section className="relative w-full bg-[#E8F5F8] py-16 lg:py-24 overflow-hidden">
-      {/* Palm Tree - Top Left */}
+      <Image
+        src="/tree.png"
+        alt="Palm tree decoration"
+        width={200}
+        height={300}
+        className="absolute bottom-[40%] -left-2 "
+      />
       <div className="relative max-w-[1441px] w-[95%] mx-auto">
-        <Image
-          src="/tree.png"
-          alt="Palm tree decoration"
-          width={200}
-          height={300}
-          className="absolute -top-10 -left-12 rotate-1"
-        />
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-futura-black text-[36px] md:text-[46px] mb-4 leading-[55px]">
@@ -204,12 +203,12 @@ export default function ServingCitiesSection() {
             </div>
 
             {/* Small Orange Circle - Right Side */}
-            <div className="absolute top-8 md:top-12 right-4 md:-right-12 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
+            <div className="2xl:hidden absolute top-8 md:top-12 right-4 md:-right-12 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
 
             {/* Small Teal Circle - Right Side, Below Orange */}
-            <div className="absolute top-16 md:top-24 right-6 md:-right-6 w-4 h-4 md:w-5 md:h-5 bg-[#008080] rounded-full" />
+            <div className="2xl:hidden absolute top-16 md:top-24 right-6 md:-right-6 w-4 h-4 md:w-5 md:h-5 bg-[#008080] rounded-full" />
           </div>
-          <div className="absolute bottom-0 -left-16 md:-left-20 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
+          <div className="2xl:hidden absolute bottom-0 -left-16 md:-left-20 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
         </div>
       </div>
 

@@ -24,13 +24,13 @@ export default function Testimonials() {
   const [activeSlide, setActiveSlide] = useState(0)
 
   return (
-    <section className="w-full bg-[#F5F5DC] py-16 lg:py-24 overflow-hidden">
+    <section className="w-full bg-[#F5F5DC] py-16 lg:py-26 overflow-hidden">
       <div className="relative max-w-[1441px] w-[95%] mx-auto relative z-10">
         <div className="absolute -right-22 top-0 w-[80px] h-[80px] z-10">
           <div className="absolute w-[20.39px] h-[20.39px] mt-14 mr-2 rounded-full rotate-[81.06deg] bg-[radial-gradient(circle_at_50%_50%,#00B8B8_0%,#008080_100%)]" />
           <div className="absolute w-[40.77px] h-[40.77px]  rounded-full rotate-[81.06deg] bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]" />
         </div>
-        <div className="absolute -right-20 bottom-0 w-[88.25px] h-[88.25px] rounded-full bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]"></div>
+        <div className="2xl:hidden absolute -right-20 bottom-0 w-[88.25px] h-[88.25px] rounded-full bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Illustration */}
@@ -60,7 +60,7 @@ export default function Testimonials() {
 
               <p
                 key={activeSlide}
-                className="absolute inset-0 flex items-center px-8 sm:px-12 lg:px-10  xl:px-12 text-center text-white font-normal text-[14px] sm:text-[16px] md:text-[18px]  xl:text-[24px] leading-[1.3] animate-fadeIn"
+                className="absolute inset-0 -translate-y-4 flex items-center px-8 sm:px-12 lg:px-10  xl:px-12 text-center text-white font-normal text-[14px] sm:text-[16px] md:text-[18px]  xl:text-[24px] leading-[1.3] animate-fadeIn"
               >
                 {testimonials[activeSlide].text}
               </p>
