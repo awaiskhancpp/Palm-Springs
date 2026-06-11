@@ -209,7 +209,7 @@ export default function ServingCitiesSection() {
             <div className="2xl:hidden absolute top-16 md:top-24 right-6 md:-right-6 w-4 h-4 md:w-5 md:h-5 bg-[#008080] rounded-full" />
           </div>
         </div>
-        <div className="2xl:hidden absolute -bottom-12 -left-2 z-0 md:-left-20 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
+        <div className="2xl:hidden absolute -bottom-10 -left-10 md:-bottom-12  z-0 md:-left-12 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
       </div>
 
       <style>{`
