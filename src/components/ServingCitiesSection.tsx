@@ -163,7 +163,7 @@ export default function ServingCitiesSection() {
         )}
 
         {/* Detail Section with Animation */}
-        <div className="relative">
+        <div className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#F5F5DC] rounded-[20px] p-8 md:p-10 relative">
             {/* Left Content */}
             <div className="flex flex-col gap-4 md:gap-6 relative">
@@ -208,8 +208,8 @@ export default function ServingCitiesSection() {
             {/* Small Teal Circle - Right Side, Below Orange */}
             <div className="2xl:hidden absolute top-16 md:top-24 right-6 md:-right-6 w-4 h-4 md:w-5 md:h-5 bg-[#008080] rounded-full" />
           </div>
-          <div className="2xl:hidden absolute bottom-0 -left-16 md:-left-20 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
         </div>
+        <div className="2xl:hidden absolute -bottom-12 -left-2 z-0 md:-left-20 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
       </div>
 
       <style>{`
