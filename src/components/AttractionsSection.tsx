@@ -70,23 +70,23 @@ export default function AttractionsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {attractions.map((attraction) => (
             <div
               key={attraction.id}
               className="flex lg:flex-row flex-col items-stretch bg-white rounded-[20px] overflow-hidden"
             >
-              <div className="relative w-full lg:w-[55%] lg:z-20 h-[180px] sm:h-[220px] md:h-[240px] lg:h-auto">
+              <div className="relative w-full lg:w-1/2  h-[180px] sm:h-[220px] md:h-[240px] lg:h-auto ">
                 <Image
                   src={isMobile ? attraction.imgMobile : attraction.img}
                   alt=".."
                   width={280}
                   height={200}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover "
                 />
               </div>
 
-              <div className="w-full lg:w-[45%] lg:z-10 p-5 sm:p-6 flex lg:flex-col flex-row gap-3 items-start z-20">
+              <div className="w-full lg:w-1/2  p-5 sm:p-6 flex lg:flex-col flex-row gap-3 items-start z-20">
                 <div className="w-13 h-13 rounded-[10px] bg-[#0080801A] flex items-center justify-center flex-shrink-0">
                   <Image src={attraction.icon} alt="icon" width={32} height={32} />
                 </div>

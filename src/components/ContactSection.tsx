@@ -159,7 +159,7 @@ export default function ContactSection() {
             </button>
           </form>
         </div>
-        <div className=" absolute right-0 -bottom-12 xl:-bottom-10">
+        <div className=" absolute right-0 -bottom-15 xl:-bottom-10">
           <div className="bg-radial from-[#00B8B8] to-[#008080] rounded-full ml-8 w-5 h-5" />
           <div className="bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full w-10 h-10 mt-2" />
         </div>

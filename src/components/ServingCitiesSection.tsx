@@ -203,10 +203,10 @@ export default function ServingCitiesSection() {
             </div>
 
             {/* Small Orange Circle - Right Side */}
-            <div className="2xl:hidden absolute top-8 md:top-12 right-4 md:-right-12 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
+            <div className="2xl:hidden absolute top-0 md:top-12 right-2 md:-right-12 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
 
             {/* Small Teal Circle - Right Side, Below Orange */}
-            <div className="2xl:hidden absolute top-16 md:top-24 right-6 md:-right-6 w-4 h-4 md:w-5 md:h-5 bg-[#008080] rounded-full" />
+            <div className="2xl:hidden absolute top-8 md:top-24 right-4 md:-right-6 w-4 h-4 md:w-5 md:h-5 bg-[#008080] rounded-full" />
           </div>
         </div>
         <div className="2xl:hidden absolute -bottom-10 -left-10 md:-bottom-12  z-0 md:-left-12 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
@@ -248,7 +248,7 @@ export default function ServingCitiesSection() {
   .custom-dots {
     display: flex !important;
     justify-content: center;
-    gap: 8px;
+    gap: 1px;
     margin-top: 20px;
     list-style: none;
     padding: 0;
