@@ -181,7 +181,7 @@ export default function ServingCitiesSection() {
                 {selectedCityData.description}
               </p>
 
-              <button className="bg-[#008080] flex gap-2 hover:bg-[#006666] text-white font-avenir-lt font-medium px-6 md:px-8 py-3 rounded transition-colors w-fit">
+              <button className="bg-[#008080] flex gap-2 mb-2 hover:bg-[#006666] text-white font-avenir-lt font-medium px-6 md:px-8 py-3 rounded transition-colors w-fit">
                 Read More <Image src="/arrow_white.svg" alt="" width={17} height={12} />
               </button>
             </div>
