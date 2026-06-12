@@ -29,7 +29,7 @@ export default function ContactSection() {
       <div className="relative max-w-[1441px] w-[95%] mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-futura-black-bold text-[#232323] text-[46px] leading-[48px] mb-4">
+          <h2 className="font-futura-black-bold text-[#232323] font-normal text-[46px] leading-[48px] mb-4">
             Let Us Know <span className="text-secondary">What You Think!</span>
           </h2>
           <p className="text-[#666666] text-[16px] leading-[24px] tracking-normal">
@@ -62,7 +62,7 @@ export default function ContactSection() {
               <div className="flex flex-col gap-2">
                 <label
                   id="name"
-                  className="font-avenir-lt font-semibold text-[18px] leading-[20px] text-[#232323]"
+                  className="font-avenir-lt font-medium text-[18px] leading-[20px] text-[#232323]"
                 >
                   Name
                 </label>
@@ -80,7 +80,7 @@ export default function ContactSection() {
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor="email"
-                  className="font-avenir-lt font-semibold text-[18px] leading-[20px] text-[#232323]"
+                  className="font-avenir-lt font-medium text-[18px] leading-[20px] text-[#232323]"
                 >
                   Email
                 </label>
@@ -101,7 +101,7 @@ export default function ContactSection() {
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor="phone"
-                  className="font-avenir-lt font-semibold text-[18px] leading-[20px] text-[#232323]"
+                  className="font-avenir-lt font-medium text-[18px] leading-[20px] text-[#232323]"
                 >
                   Phone
                 </label>
@@ -119,7 +119,7 @@ export default function ContactSection() {
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor="company"
-                  className="font-avenir-lt  font-semibold text-[18px] leading-[20px] text-[#232323]"
+                  className="font-avenir-lt  font-medium text-[18px] leading-[20px] text-[#232323]"
                 >
                   Company
                 </label>
@@ -138,7 +138,7 @@ export default function ContactSection() {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="message"
-                className="font-avenir-lt font-semibold text-[18px] leading-[20px] text-[#232323]"
+                className="font-avenir-lt font-medium text-[18px] leading-[20px] text-[#232323]"
               >
                 Message
               </label>
@@ -156,7 +156,7 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="bg-primary hover:bg-[#006666] text-white font-avenir-lt font-semibold px-8 py-3 rounded transition-colors w-full"
+              className="bg-primary hover:bg-[#006666] text-white font-avenir-lt font-semibold px-8 py-4 rounded transition-colors w-full"
             >
               Submit
             </button>

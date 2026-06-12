@@ -7,12 +7,15 @@ import Testimonials from '@/components/Testimonials'
 import AdvantagesSection from '@/components/AdvantagesSection'
 import ServingCitiesSection from '@/components/ServingCitiesSection'
 import ContactSection from '@/components/ContactSection'
+import Testimonial from '@/components/Testimonial2'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
+import Hero from '@/components/HeroSection2'
 export default async function HomePage() {
   return (
     <div>
       <Navbar />
+      {/* <Hero /> */}
       <HeroSection />
       <div className="relative">
         <MidCenturySection />
@@ -21,7 +24,8 @@ export default async function HomePage() {
         </div>
         <AttractionsSection />
       </div>
-      <Testimonials />
+      <Testimonial />
+      {/* <Testimonials /> */}
       <AdvantagesSection />
       <ServingCitiesSection />
       <ContactSection />

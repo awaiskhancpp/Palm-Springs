@@ -52,15 +52,15 @@ export default function AttractionsSection() {
   ]
 
   return (
-    <section className="relative w-full bg-[#0080801A] py-16 overflow-hidden z-20">
-      <div className="relative max-w-[1441px] w-[95%] mx-auto relative z-10">
+    <section id="services" className="relative w-full bg-[#0080801A] py-16 overflow-hidden z-20">
+      <div className="relative max-w-[1240px] w-[95%] mx-auto relative z-10">
         <div className="2xl:hidden absolute -left-30 top-1/2 w-30 h-30 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
         <div
           className="2xl:hidden absolute bottom-10 -right-14 w-10 h-10 rounded-full"
           style={{ background: 'linear-gradient(180deg, #FFA500 0%, #EA7000 100%)' }}
         ></div>
         <div className="text-center mb-16">
-          <h2 className="font-futura-black text-[30px] sm:text-[36px] lg:text-[42px] mb-4">
+          <h2 className="font-futura-black text-[30px] sm:text-[36px] lg:text-[46px] font-bold mb-4">
             Showcasing <span className="text-secondary">Local Attractions</span>
           </h2>
           <p className="font-avenir-lt text-[16px] text-[#787878] leading-[26px] max-w-4xl mx-auto">
@@ -70,11 +70,11 @@ export default function AttractionsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {attractions.map((attraction) => (
             <div
               key={attraction.id}
-              className="flex lg:flex-row flex-col items-stretch bg-white rounded-lg overflow-hidden"
+              className="flex lg:flex-row flex-col items-stretch bg-white rounded-[20px] overflow-hidden"
             >
               <div className="relative w-full lg:w-[40%] h-[180px] sm:h-[220px] md:h-[240px] lg:h-auto">
                 <Image
@@ -87,7 +87,7 @@ export default function AttractionsSection() {
               </div>
 
               <div className="lg:w-1/2 w-full p-5 sm:p-6 flex lg:flex-col flex-row gap-3 items-start">
-                <div className="w-13 h-13 rounded-lg bg-[#0080801A] flex items-center justify-center flex-shrink-0">
+                <div className="w-13 h-13 rounded-[20px] bg-[#0080801A] flex items-center justify-center flex-shrink-0">
                   <Image src={attraction.icon} alt="icon" width={32} height={32} />
                 </div>
                 <div className="flex flex-col gap-2">

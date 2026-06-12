@@ -13,12 +13,21 @@
     font-family: 'Futura-Black-Bold';
     src: url('/fonts/futura_extra_black_font.ttf') format('truetype');
     font-display: swap;
+  }
+  @font-face { 
+    font-family: 'Gilroy-Light';
+    src: url('/fonts/Gilroy-Light.otf') format('opentype');
+    font-display: swap;
   } 
+  body {
+    background-color: #0080801A;
+  }
   @theme 
   { 
     --font-futura-black: "Futura-Black",sans-serif;
     --font-avenir-lt: "Avenir-LT-Std",sans-serif;
     --font-futura-black-bold: "Futura-Black-Bold", sans-serif;
+    --font-gilroy:"Gilroy-Light",sans-serif;
     --color-primary:#008080;
     --color-secondary:#FFA500; 
     --color-beige:#F5F5DC; 

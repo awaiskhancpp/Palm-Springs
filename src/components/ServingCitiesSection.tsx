@@ -88,7 +88,7 @@ export default function ServingCitiesSection() {
   const selectedCityData = cities.find((city) => city.id === selectedCity) || cities[1]
 
   return (
-    <section className="relative w-full bg-[#E8F5F8] py-16 lg:py-24 overflow-hidden">
+    <section className="relative w-full bg-[#0080801A] py-16  overflow-hidden">
       <Image
         src="/tree.png"
         alt="Palm tree decoration"
@@ -96,15 +96,15 @@ export default function ServingCitiesSection() {
         height={300}
         className="absolute bottom-[40%] -left-2 "
       />
-      <div className="relative max-w-[1441px] w-[95%] mx-auto">
+      <div className="relative max-w-[1240px] w-[95%] mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-futura-black text-[36px] md:text-[46px] mb-4 leading-[55px]">
+        <div className="text-center mb-16 max-w-[657px] mx-auto">
+          <h2 className="font-futura-black font-bold text-[36px] md:text-[46px] mb-4 leading-[55px]">
             Serving <span className="text-[#FFA500]">Surrounding Cities</span>
           </h2>
-          <p className="font-avenir-lt text-[18px] text-[#333333] leading-[26px] max-w-4xl mx-auto">
-            While our roots are in Palm Springs, we proudly serve the greater Coachella Valley and
-            surrounding areas, including communities in our expanding service network.
+          <p className="font-avenir-lt text-[18px] font-normal text-[#333333] leading-[26px] ">
+            While Palm Springs is our primary focus, we also extend our services to surrounding
+            cities, including
           </p>
         </div>
 
@@ -118,7 +118,7 @@ export default function ServingCitiesSection() {
                     onClick={() => setSelectedCity(city.id)}
                     className={`${selectedCity === city.id ? 'bg-[#F29AA7]' : 'bg-white'} rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer`}
                   >
-                    <div className="flex flex-col gap-5 justify-center items-center">
+                    <div className="flex flex-col gap-4 justify-center items-center">
                       <Image
                         src={selectedCity === city.id ? city.iconWhite : city.icon}
                         alt=""
@@ -137,22 +137,22 @@ export default function ServingCitiesSection() {
             </Slider>
           </div>
         ) : (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
             {cities.map((city) => (
               <div
                 key={city.id}
                 onMouseEnter={() => setSelectedCity(city.id)}
-                className={`${selectedCity === city.id ? 'bg-[#F29AA7]' : 'bg-white'} rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer`}
+                className={`${selectedCity === city.id ? 'bg-[#F29AA7]' : 'bg-white'} shadow-[0px_0px_45px_0px_#0000001A] rounded-[20px] py-10 px-6 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer`}
               >
                 <div className="flex flex-col gap-5 justify-center items-center">
                   <Image
                     src={selectedCity === city.id ? city.iconWhite : city.icon}
                     alt=""
-                    width={58}
-                    height={48}
+                    width={60}
+                    height={60}
                   />
                   <h3
-                    className={`font-futura-black text-[14px] md:text-[18px] ${selectedCity === city.id ? 'text-white' : 'text-[#102039]'}`}
+                    className={`font-futura-black text-[14px] whitespace-nowrap md:text-[22px] ${selectedCity === city.id ? 'text-white' : 'text-[#102039]'}`}
                   >
                     {city.name}
                   </h3>
@@ -164,9 +164,9 @@ export default function ServingCitiesSection() {
 
         {/* Detail Section with Animation */}
         <div className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#F5F5DC] rounded-[20px] p-8 md:p-10 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2  items-center bg-[#F5F5DC] rounded-[20px] p-8 md:p-10 relative">
             {/* Left Content */}
-            <div className="flex flex-col gap-4 md:gap-6 relative">
+            <div className="flex flex-col gap-4 md:gap-6 max-w-[620px] relative">
               <h2
                 key={selectedCity}
                 className="font-futura-black text-[28px] md:text-[38px] leading-[1.2] text-[#008080] animate-fadeIn"
@@ -176,12 +176,12 @@ export default function ServingCitiesSection() {
 
               <p
                 key={`desc-${selectedCity}`}
-                className="font-avenir-lt text-[14px] md:text-[16px] text-[#787878] leading-[24px] md:leading-[26px] animate-fadeIn"
+                className="font-avenir-lt font-normal text-[14px] md:text-[16px] text-[#787878] leading-[24px] md:leading-[26px] animate-fadeIn"
               >
                 {selectedCityData.description}
               </p>
 
-              <button className="bg-[#008080] flex gap-2 hover:bg-[#006666] text-white font-avenir-lt font-semibold px-6 md:px-8 py-3 rounded transition-colors w-fit">
+              <button className="bg-[#008080] flex gap-2 hover:bg-[#006666] text-white font-avenir-lt font-medium px-6 md:px-8 py-3 rounded transition-colors w-fit">
                 Read More <Image src="/arrow_white.svg" alt="" width={17} height={12} />
               </button>
             </div>

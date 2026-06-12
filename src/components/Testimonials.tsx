@@ -24,10 +24,13 @@ export default function Testimonials() {
   const [activeSlide, setActiveSlide] = useState(0)
 
   return (
-    <section className="w-full bg-[#F5F5DC] py-16 lg:py-26 overflow-hidden">
-      <div className="relative max-w-[1441px] w-[95%] mx-auto relative z-10">
-        <div className="absolute -right-22 top-0 w-[80px] h-[80px] z-10">
-          <div className="absolute w-[20.39px] h-[20.39px] mt-14 mr-2 rounded-full rotate-[81.06deg] bg-[radial-gradient(circle_at_50%_50%,#00B8B8_0%,#008080_100%)]" />
+    <section
+      id="testimonial"
+      className="w-full bg-[#F5F5DC] py-16  lg:py-26 lg:pt-40 overflow-hidden"
+    >
+      <div className="relative z-10">
+        <div className="absolute xl:-right-10 -top-20 w-[80px] h-[80px] z-10">
+          <div className="absolute w-[20.39px] h-[20.39px] mt-14 mr-7 rounded-full rotate-[81.06deg] bg-[radial-gradient(circle_at_50%_50%,#00B8B8_0%,#008080_100%)]" />
           <div className="absolute w-[40.77px] h-[40.77px]  rounded-full rotate-[81.06deg] bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]" />
         </div>
         <div className="2xl:hidden absolute -right-20 bottom-0 w-[88.25px] h-[88.25px] rounded-full bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]"></div>
@@ -47,7 +50,7 @@ export default function Testimonials() {
           </div>
 
           {/* Right Testimonial */}
-          <div className="relative flex flex-col items-start">
+          <div className="relative flex flex-col items-start justify-start">
             {/* Speech Bubble with Tail */}
             <div className="relative w-full max-w-[450px] sm:max-w-[550px] xl:max-w-[654px] mx-auto">
               <Image
@@ -67,7 +70,7 @@ export default function Testimonials() {
             </div>
             <div
               key={`img-${activeSlide}`}
-              className="absolute left-2 md:left-[14%] lg:left-2 xl:left-5 2xl:left-10 bottom-1 md:bottom-0 lg:-bottom-2 w-16 h-16 sm:w-20 sm:h-20 xl:w-24 xl:h-24 rounded-full overflow-hidden border-4 border-white animate-slideIn"
+              className="absolute left-2 md:left-[16%] lg:left-2 xl:left-8 2xl:left-[25%] bottom-1 md:bottom-0 lg:-bottom-1 xl:-bottom-6  w-16 h-16 sm:w-20 sm:h-20 xl:w-28 xl:h-28 rounded-full overflow-hidden  animate-slideIn"
             >
               <Image
                 src={testimonials[activeSlide].image}
