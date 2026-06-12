@@ -92,9 +92,9 @@ export default function ServingCitiesSection() {
       <Image
         src="/tree.png"
         alt="Palm tree decoration"
-        width={200}
-        height={300}
-        className="absolute bottom-[40%] -left-2 "
+        width={290}
+        height={500}
+        className="absolute bottom-[30%] -left-2 "
       />
       <div className="relative max-w-[1240px] w-[95%] mx-auto">
         {/* Section Header */}
@@ -126,7 +126,7 @@ export default function ServingCitiesSection() {
                         height={48}
                       />
                       <h3
-                        className={`font-futura-black text-[14px] md:text-[18px] ${selectedCity === city.id ? 'text-white' : 'text-[#102039]'}`}
+                        className={`font-futura-black font-light text-[14px] md:text-[18px] ${selectedCity === city.id ? 'text-white' : 'text-[#102039]'}`}
                       >
                         {city.name}
                       </h3>
@@ -166,7 +166,7 @@ export default function ServingCitiesSection() {
         <div className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2  items-center bg-[#F5F5DC] rounded-[20px] p-8 md:p-10 relative">
             {/* Left Content */}
-            <div className="flex flex-col gap-4 md:gap-6 max-w-[620px] relative">
+            <div className="order-2 lg:order-1 flex flex-col gap-4 md:gap-6 max-w-[620px] relative">
               <h2
                 key={selectedCity}
                 className="font-futura-black text-[28px] md:text-[38px] leading-[1.2] text-[#008080] animate-fadeIn"
@@ -181,13 +181,13 @@ export default function ServingCitiesSection() {
                 {selectedCityData.description}
               </p>
 
-              <button className="bg-[#008080] flex gap-2 mb-2 hover:bg-[#006666] text-white font-avenir-lt font-medium px-6 md:px-8 py-3 rounded transition-colors w-fit">
+              <button className="bg-[#008080] items-center flex gap-2 hover:bg-[#006666] text-white font-avenir-lt font-medium px-6 md:px-8 py-3 rounded transition-colors w-fit">
                 Read More <Image src="/arrow_white.svg" alt="" width={17} height={12} />
               </button>
             </div>
 
             {/* Right Image */}
-            <div className="flex justify-end relative w-full lg:w-auto">
+            <div className="order-1 lg:order-2flex justify-end relative w-full lg:w-auto">
               <div
                 key={`img-${selectedCity}`}
                 className="w-full lg:max-w-md rounded-3xl overflow-hidden animate-slideIn"

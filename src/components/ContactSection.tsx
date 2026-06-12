@@ -41,7 +41,7 @@ export default function ContactSection() {
         {/* Form Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:max-w-[1254px] mx-auto gap-3 items-center">
           {/* Left Illustration */}
-          <div className="order-2 lg:order-1 flex justify-center w-full lg:w-auto">
+          <div className="flex justify-center w-full lg:w-auto">
             <div className="w-full lg:max-w-[611px] rounded-3xl">
               <Image
                 src="/contact_us.png"
@@ -54,10 +54,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="order-1 lg:order-2 flex flex-col gap-6 mb-3 w-full"
-          >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6 mb-3 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
                 <label
@@ -88,7 +85,7 @@ export default function ContactSection() {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="www.com@gmail.com"
+                  placeholder="johndoe@gmail.com"
                   value={formData.email}
                   onChange={handleChange}
                   className="font-avenir-lt bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#008080] focus:ring-2 focus:ring-[#008080] focus:ring-opacity-20"
@@ -109,7 +106,7 @@ export default function ContactSection() {
                   type="tel"
                   id="phone"
                   name="phone"
-                  placeholder="00000000"
+                  placeholder="+1 718 222 2222"
                   value={formData.phone}
                   onChange={handleChange}
                   className="font-avenir-lt px-4 bg-white py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#008080] focus:ring-2 focus:ring-[#008080] focus:ring-opacity-20"

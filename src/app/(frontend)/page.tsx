@@ -19,8 +19,8 @@ export default async function HomePage() {
       <HeroSection />
       <div className="relative">
         <MidCenturySection />
-        <div className="absolute top-[40%] left-0 z-30 pointer-events-none">
-          <Image src="/tree_2.png" alt="" width={290} height={450} className="rotate-4" />
+        <div className="absolute top-[40%] left-0 z-10 pointer-events-none ">
+          <Image src="/tree_2.png" alt="" width={290} height={600} className="rotate-4" />
         </div>
         <AttractionsSection />
       </div>

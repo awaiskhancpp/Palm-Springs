@@ -4,9 +4,6 @@ export default function HeroSection() {
     <section
       id="home"
       className="relative w-full min-h-[calc(100vh-68px)]  bg-beige flex items-center overflow-hidden"
-      style={{
-        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 60px 100%, 0% calc(100% - 60px))',
-      }}
     >
       <div className="relative max-w-[1441px] mx-auto px-6 lg:px-8 xl:px-0 pt-10 mt-8 lg:pt-0 pb-0">
         <div className="absolute w-[83.9px] h-[83.9px] left-1/2 md:left-[30%] lg:left-[20%] -bottom-6 2xl:-bottom-[240px] 2xl:left-[20%] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
@@ -57,7 +54,7 @@ export default function HeroSection() {
               California.
             </p>
 
-            <button className="bg-primary flex gap-2 items-center mb-4 hover:bg-[#006666] text-white font-avenir-lt font-semibold text-[15px] md:text-[16px] px-8 md:px-10 py-3 md:py-3.5 rounded-[5px] transition-colors w-fit">
+            <button className="bg-primary flex gap-2 text-center items-center mb-4 hover:bg-[#006666] text-white font-avenir-lt font-semibold text-[15px] md:text-[16px] px-8 md:px-10 py-3 md:py-3.5 rounded-[5px] transition-colors w-fit">
               Read More <Image src="/arrow_white.svg" alt="" width={17} height={14} />
             </button>
           </div>

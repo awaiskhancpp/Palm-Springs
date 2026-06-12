@@ -54,9 +54,9 @@ export default function AttractionsSection() {
   return (
     <section id="services" className="relative w-full bg-[#0080801A] py-16 overflow-hidden z-20">
       <div className="relative max-w-[1240px] w-[95%] mx-auto relative z-10">
-        <div className="2xl:hidden absolute -left-30 top-1/2 w-30 h-30 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
+        <div className="2xl:hidden absolute -left-40 top-1/2 w-30 h-30 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
         <div
-          className="2xl:hidden absolute bottom-10 -right-14 w-10 h-10 rounded-full"
+          className="2xl:hidden absolute bottom-10 -right-30 w-10 h-10 rounded-full"
           style={{ background: 'linear-gradient(180deg, #FFA500 0%, #EA7000 100%)' }}
         ></div>
         <div className="text-center mb-16">
@@ -76,7 +76,7 @@ export default function AttractionsSection() {
               key={attraction.id}
               className="flex lg:flex-row flex-col items-stretch bg-white rounded-[20px] overflow-hidden"
             >
-              <div className="relative w-full lg:w-[40%] h-[180px] sm:h-[220px] md:h-[240px] lg:h-auto">
+              <div className="relative w-full lg:w-[55%] lg:z-20 h-[180px] sm:h-[220px] md:h-[240px] lg:h-auto">
                 <Image
                   src={isMobile ? attraction.imgMobile : attraction.img}
                   alt=".."
@@ -86,8 +86,8 @@ export default function AttractionsSection() {
                 />
               </div>
 
-              <div className="lg:w-1/2 w-full p-5 sm:p-6 flex lg:flex-col flex-row gap-3 items-start">
-                <div className="w-13 h-13 rounded-[20px] bg-[#0080801A] flex items-center justify-center flex-shrink-0">
+              <div className="w-full lg:w-[45%] lg:z-10 p-5 sm:p-6 flex lg:flex-col flex-row gap-3 items-start z-20">
+                <div className="w-13 h-13 rounded-[10px] bg-[#0080801A] flex items-center justify-center flex-shrink-0">
                   <Image src={attraction.icon} alt="icon" width={32} height={32} />
                 </div>
                 <div className="flex flex-col gap-2">

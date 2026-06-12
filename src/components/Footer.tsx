@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 w-[98vw] mx-auto h-[1px] md:h-[2px] bg-[#1E1E1E] mt-4 md:mt-6" />
+      <div className="relative z-10 w-[99vw] mx-auto h-[1px] md:h-[2px] bg-[#1E1E1E] mt-4 md:mt-6" />
 
       <div className="relative z-10 text-center mt-4 md:mt-6 px-4">
         <p className="font-avenir-lt text-[12px] sm:text-[13px] md:text-[14px] font-normal text-[#232323]">

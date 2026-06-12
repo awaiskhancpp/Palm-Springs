@@ -31,7 +31,7 @@ export default function AdvantagesSection() {
         alt=""
         width={200}
         height={240}
-        className="absolute top-4 -right-2"
+        className="absolute top-6 -right-2"
       />
       <div
         className="
@@ -52,39 +52,39 @@ export default function AdvantagesSection() {
       />
       <div
         className="
-    absolute
-    right-0
-    top-0
-    -translate-y-1/2
-    w-[313px]
-    h-[313px]
-    rounded-full
-    bg-[#008080]
-    opacity-10
-    blur-[234px]
-    pointer-events-none
-    z-0
-  "
+          absolute
+          right-0
+          top-0
+          -translate-y-1/2
+          w-[313px]
+          h-[313px]
+          rounded-full
+          bg-[#008080]
+          opacity-10
+          blur-[234px]
+          pointer-events-none
+          z-0
+        "
       />
       <div className="relative max-w-[1240px] w-[95%] mx-auto">
         <div
           className="
-    absolute
-    left-1/2
-    top-1/2
-    -translate-x-1/2
-    -translate-y-1/2
-    w-[400px]
-    h-[400px]
-    rounded-full
-    bg-[#008080]/10
-    blur-[120px]
-    pointer-events-none
-  "
+          absolute
+          left-1/2
+          top-1/2
+          -translate-x-1/2
+          -translate-y-1/2
+          w-[400px]
+          h-[400px]
+          rounded-full
+          bg-[#008080]/10
+          blur-[120px]
+          pointer-events-none
+        "
         />
         <div
           id="advantage"
-          className="absolute left-10 top-0 xl:top-20 w-[53.18px] h-[73.36px] relative"
+          className="absolute -left-10 top-0 xl:top-20 w-[53.18px] h-[73.36px] relative"
         >
           <div className="w-[40.77px] h-[40.77px] rounded-full bg-[linear-gradient(180deg,#FFA500_0%,#EA7000_100%)]" />
           <div className="w-[20.39px] h-[20.39px] mt-4 ml-10 rounded-full bg-[radial-gradient(circle_at_50%_50%,#00B8B8_0%,#008080_100%)]" />
@@ -103,7 +103,7 @@ export default function AdvantagesSection() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-8">
           {advantages.map((advantage) => (
             <div
               key={advantage.id}
