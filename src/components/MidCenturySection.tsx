@@ -15,7 +15,7 @@ export default function MidCenturySection() {
       />
 
       <div className="relative max-w-[1240px] w-[95%] mx-auto">
-        <div className=" block absolute -right-32 bottom-0 w-[77.72px] h-[77.72px] rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
+        <div className="2xl:hidden block absolute -right-32 bottom-0 w-[77.72px] h-[77.72px] rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
         <div className=" absolute top-[84%] -left-3 md:left-10 lg:-left-10 lg:bottom-12 w-[99px] h-[99px] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-0 lg:gap-5 xl:gap-0">
           {/* Left Image Section */}
