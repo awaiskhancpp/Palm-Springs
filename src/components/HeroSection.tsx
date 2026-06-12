@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div className="relative max-w-[1441px] mx-auto px-6 lg:px-8 xl:px-0 pt-10 mt-8 lg:pt-0 pb-0">
         <div className="absolute w-[83.9px] h-[83.9px] left-1/2 md:left-[30%] lg:left-[20%] -bottom-6 2xl:-bottom-[240px] 2xl:left-[20%] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
 
-        <div className="absolute top-17 -right-17 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
+        <div className="2xl:hidden block absolute top-17 -right-26 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
         <div className="absolute lg:top-10 top-1 left-1/2 lg:left-[40%]">
           <div className="w-10 h-10 rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
           <div className="absolute top-9 left-8 w-5 h-5 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
