@@ -15,8 +15,8 @@ export default async function HomePage() {
   return (
     <div>
       <Navbar />
-      {/* <Hero /> */}
-      <HeroSection />
+      <Hero />
+      {/* <HeroSection /> */}
       <div className="relative">
         <MidCenturySection />
         <div className="absolute top-[40%] left-0 z-10 pointer-events-none ">
