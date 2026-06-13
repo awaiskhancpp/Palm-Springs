@@ -54,6 +54,14 @@ export default function AttractionsSection() {
   return (
     <section id="services" className="relative w-full bg-[#0080801A] py-16 overflow-hidden z-20">
       <div className="relative max-w-[1240px] w-[95%] mx-auto relative z-10">
+        <div
+          className="absolute rounded-full bg-primary top-[15%] left-0 opacity-10"
+          style={{
+            width: '312.72px',
+            height: '312.72px',
+            backdropFilter: 'blur(234px)',
+          }}
+        />
         <div className="2xl:hidden absolute -left-40 top-1/2 w-30 h-30 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
         <div
           className="2xl:hidden absolute bottom-10 -right-30 w-10 h-10 rounded-full"
