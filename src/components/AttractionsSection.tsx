@@ -55,7 +55,7 @@ export default function AttractionsSection() {
     <section id="services" className="relative w-full bg-[#0080801A] py-16 overflow-hidden z-20">
       <div className="relative max-w-[1240px] w-[95%] mx-auto relative z-10">
         <div
-          className="absolute rounded-full bg-primary top-[15%] left-0 opacity-10"
+          className="absolute rounded-full bg-primary top-[15%] left-1/2 opacity-2"
           style={{
             width: '312.72px',
             height: '312.72px',
@@ -85,12 +85,34 @@ export default function AttractionsSection() {
               className="flex lg:flex-row flex-col items-stretch bg-white rounded-[20px] overflow-hidden"
             >
               <div className="relative w-full lg:w-1/2  h-[180px] sm:h-[220px] md:h-[240px] lg:h-auto ">
+                <svg width="0" height="0" className="absolute overflow-hidden">
+                  <defs>
+                    <clipPath id={`img-clip-${attraction.id}`} clipPathUnits="objectBoundingBox">
+                      <path d="M0.8707,0.0998 C0.8901,0.0577 0.9652,0 0.9652,0 L0,0 L0,1 L0.9672,1 C0.7942,0.8895 0.9222,0.7327 0.9542,0.5938 C0.9934,0.4255 0.8815,0.3943 0.8452,0.2969 C0.8088,0.1996 0.8578,0.1274 0.8707,0.0998 Z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+
+                {/* ↓ inline SVG replaces <Image src="/image.svg"> — preserveAspectRatio="none" is the fix */}
+                <svg
+                  viewBox="0 0 274 315"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute inset-0 w-full h-full z-5 hidden lg:block"
+                >
+                  <path
+                    d="M246.679 31.4243C252.176 18.1731 273.515 4.24733e-05 273.515 4.24733e-05L20 4.76514e-05C8.95433 4.7877e-05 1.33777e-05 8.95435 1.28949e-05 20L8.7424e-07 295C3.91418e-07 306.046 8.95428 315 20 315L274 315C225.005 280.168 261.287 230.787 270.418 187.031C281.48 134.027 249.776 124.183 239.454 93.5157C229.133 62.8486 243.067 40.1323 246.679 31.4243Z"
+                    fill="#008080"
+                  />
+                </svg>
+
                 <Image
-                  src={isMobile ? attraction.imgMobile : attraction.img}
+                  src={attraction.imgMobile}
                   alt=".."
-                  width={280}
+                  width={260}
                   height={200}
-                  className="w-full h-full object-cover "
+                  className="relative z-10 w-full h-full object-cover "
+                  style={!isMobile ? { clipPath: `url(#img-clip-${attraction.id})` } : undefined}
                 />
               </div>
 

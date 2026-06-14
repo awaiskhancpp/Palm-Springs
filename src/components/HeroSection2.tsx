@@ -28,7 +28,7 @@ export default function Hero() {
           </div>
 
           {/* Content: second on mobile/md, left side on lg+ */}
-          <div className="order-2 lg:order-1 lg:col-span-7">
+          <div className="order-2 lg:order-1 lg:col-span-7 ">
             <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-4 px-6 pb-8 lg:pb-0 lg:pl-[8%] lg:pr-8">
               <div className="inline-flex items-center border border-[#232323] rounded-full px-5 py-2 w-fit">
                 <span className="font-avenir-lt font-extralight text-[13px] text-[#232323]">

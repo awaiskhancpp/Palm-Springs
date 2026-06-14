@@ -15,6 +15,11 @@
     font-display: swap;
   }
   @font-face { 
+    font-family: 'FuturaHeavyBT';
+    src: url('/fonts/FuturaHeavyBT.ttf') format('truetype');
+    font-display: swap;
+  }
+  @font-face { 
     font-family: 'Gilroy-Light';
     src: url('/fonts/Gilroy-Light.otf') format('opentype');
     font-display: swap;
@@ -27,6 +32,7 @@
     --font-futura-black: "Futura-Black",sans-serif;
     --font-avenir-lt: "Avenir-LT-Std",sans-serif;
     --font-futura-black-bold: "Futura-Black-Bold", sans-serif;
+    --font-futura-bt:"FuturaHeavyBT",sans-serif;
     --font-gilroy:"Gilroy-Light",sans-serif;
     --color-primary:#008080;
     --color-secondary:#FFA500; 

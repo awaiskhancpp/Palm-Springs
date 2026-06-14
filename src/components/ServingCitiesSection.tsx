@@ -46,7 +46,7 @@ export default function ServingCitiesSection() {
   ]
 
   const [selectedCity, setSelectedCity] = useState<number | null>(2)
-  const sliderRef = useRef(null)
+  const sliderRef = useRef<Slider | null>(null)
   const [isSmallScreen, setIsSmallScreen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -59,21 +59,28 @@ export default function ServingCitiesSection() {
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
+  useEffect(() => {
+    if (isSmallScreen) {
+      const index = cities.findIndex((city) => city.id === selectedCity)
+      if (index !== -1) {
+        setTimeout(() => {
+          sliderRef.current?.slickGoTo(index)
+        }, 50)
+      }
+    }
+  }, [selectedCity, isSmallScreen])
+
+  const selectedCityIndex = cities.findIndex((city) => city.id === selectedCity)
+
   const sliderSettings = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    initialSlide: selectedCityIndex !== -1 ? selectedCityIndex : 0,
     dotsClass: 'slick-dots custom-dots',
     responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          dots: true,
-        },
-      },
       {
         breakpoint: 640,
         settings: {
@@ -84,17 +91,16 @@ export default function ServingCitiesSection() {
     ],
     afterChange: (index: number) => setCurrentSlide(index),
   }
-
   const selectedCityData = cities.find((city) => city.id === selectedCity) || cities[1]
 
   return (
-    <section className="relative w-full bg-[#0080801A] py-16  overflow-hidden">
+    <section className="relative w-full bg-[#0080801A] py-16 overflow-hidden">
       <Image
         src="/tree.png"
         alt="Palm tree decoration"
         width={290}
         height={500}
-        className="absolute bottom-[30%] -left-2 "
+        className="absolute bottom-[30%] -left-2"
       />
       <div className="relative max-w-[1240px] w-[95%] mx-auto">
         {/* Section Header */}
@@ -102,7 +108,7 @@ export default function ServingCitiesSection() {
           <h2 className="font-futura-black font-bold text-[36px] md:text-[46px] mb-4 leading-[55px]">
             Serving <span className="text-[#FFA500]">Surrounding Cities</span>
           </h2>
-          <p className="font-avenir-lt text-[18px] font-normal text-[#333333] leading-[26px] ">
+          <p className="font-avenir-lt text-[18px] font-normal text-[#333333] leading-[26px]">
             While Palm Springs is our primary focus, we also extend our services to surrounding
             cities, including
           </p>
@@ -116,7 +122,9 @@ export default function ServingCitiesSection() {
                 <div key={city.id} className="px-2">
                   <div
                     onClick={() => setSelectedCity(city.id)}
-                    className={`${selectedCity === city.id ? 'bg-[#F29AA7]' : 'bg-white'} rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer`}
+                    className={`${
+                      selectedCity === city.id ? 'bg-[#F29AA7]' : 'bg-white'
+                    } rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer`}
                   >
                     <div className="flex flex-col gap-4 justify-center items-center">
                       <Image
@@ -126,7 +134,9 @@ export default function ServingCitiesSection() {
                         height={48}
                       />
                       <h3
-                        className={`font-futura-black font-light text-[14px] md:text-[18px] ${selectedCity === city.id ? 'text-white' : 'text-[#102039]'}`}
+                        className={`font-futura-black font-light text-[14px] md:text-[18px] ${
+                          selectedCity === city.id ? 'text-white' : 'text-[#102039]'
+                        }`}
                       >
                         {city.name}
                       </h3>
@@ -141,8 +151,10 @@ export default function ServingCitiesSection() {
             {cities.map((city) => (
               <div
                 key={city.id}
-                onMouseEnter={() => setSelectedCity(city.id)}
-                className={`${selectedCity === city.id ? 'bg-[#F29AA7]' : 'bg-white'} shadow-[0px_0px_45px_0px_#0000001A] rounded-[20px] py-10 px-6 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer`}
+                onClick={() => setSelectedCity(city.id)}
+                className={`${
+                  selectedCity === city.id ? 'bg-[#F29AA7]' : 'bg-white'
+                } shadow-[0px_0px_45px_0px_#0000001A] rounded-[20px] py-10 px-6 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer`}
               >
                 <div className="flex flex-col gap-5 justify-center items-center">
                   <Image
@@ -152,7 +164,9 @@ export default function ServingCitiesSection() {
                     height={60}
                   />
                   <h3
-                    className={`font-futura-black text-[14px] whitespace-nowrap md:text-[22px] ${selectedCity === city.id ? 'text-white' : 'text-[#102039]'}`}
+                    className={`font-futura-bt text-[14px] font-normal whitespace-nowrap md:text-[22px] ${
+                      selectedCity === city.id ? 'text-white' : 'text-[#102039]'
+                    }`}
                   >
                     {city.name}
                   </h3>
@@ -164,7 +178,7 @@ export default function ServingCitiesSection() {
 
         {/* Detail Section with Animation */}
         <div className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2  items-center bg-[#F5F5DC] rounded-[20px] p-8 md:p-10 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center bg-[#F5F5DC] rounded-[20px] p-8 md:p-10 relative">
             {/* Left Content */}
             <div className="order-2 lg:order-1 flex flex-col gap-4 md:gap-6 max-w-[620px] relative">
               <h2
@@ -187,7 +201,7 @@ export default function ServingCitiesSection() {
             </div>
 
             {/* Right Image */}
-            <div className="order-1 lg:order-2flex justify-end relative w-full lg:w-auto">
+            <div className="order-1 lg:order-2 flex justify-end relative w-full lg:w-auto">
               <div
                 key={`img-${selectedCity}`}
                 className="w-full lg:max-w-md rounded-3xl overflow-hidden animate-slideIn"
@@ -202,75 +216,66 @@ export default function ServingCitiesSection() {
               </div>
             </div>
 
-            {/* Small Orange Circle - Right Side */}
+            {/* Small Orange Circle */}
             <div className="2xl:hidden absolute top-0 md:top-12 right-2 md:-right-12 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
 
-            {/* Small Teal Circle - Right Side, Below Orange */}
+            {/* Small Teal Circle */}
             <div className="2xl:hidden absolute top-8 md:top-24 right-4 md:-right-6 w-4 h-4 md:w-5 md:h-5 bg-[#008080] rounded-full" />
           </div>
         </div>
-        <div className="2xl:hidden absolute -bottom-10 -left-10 md:-bottom-12  z-0 md:-left-12 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
+
+        <div className="2xl:hidden absolute -bottom-10 -left-10 md:-bottom-12 z-0 md:-left-12 w-24 h-24 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
       </div>
 
       <style>{`
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
 
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateX(20px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
 
-  .animate-fadeIn {
-    animation: fadeIn 0.5s ease-in-out;
-  }
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-in-out;
+        }
 
-  .animate-slideIn {
-    animation: slideIn 0.5s ease-in-out;
-  }
+        .animate-slideIn {
+          animation: slideIn 0.5s ease-in-out;
+        }
 
-  .slick-dots {
-    display: none !important;
-  }
+        .slick-dots {
+          display: none !important;
+        }
 
-  .custom-dots {
-    display: flex !important;
-    justify-content: center;
-    gap: 1px;
-    margin-top: 20px;
-    list-style: none;
-    padding: 0;
-  }
+        .custom-dots {
+          display: flex !important;
+          justify-content: center;
+          gap: 1px;
+          margin-top: 20px;
+          list-style: none;
+          padding: 0;
+        }
 
-  .custom-dots li {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #ccc;
-    cursor: pointer;
-    display: block;
-  }
+        .custom-dots li {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #ccc;
+          cursor: pointer;
+          display: block;
+        }
 
-  .custom-dots li.slick-active {
-    background-color: #008080;
-  }
+        .custom-dots li.slick-active {
+          background-color: #008080;
+        }
 
-  .custom-dots li button {
-    display: none;
-  }
-`}</style>
+        .custom-dots li button {
+          display: none;
+        }
+      `}</style>
     </section>
   )
 }
