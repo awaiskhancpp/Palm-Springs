@@ -107,7 +107,11 @@ export default function AdvantagesSection() {
           {advantages.map((advantage) => (
             <div
               key={advantage.id}
-              className="flex flex-col h-full gap-2 pl-4 py-6 pr-6 rounded-2xl border border-[#0000004D] hover:border-opacity-40 transition-all"
+              className={`
+    flex flex-col h-full gap-2 pl-4 py-6 pr-6 rounded-2xl
+    border border-[#0000004D] hover:border-opacity-40 transition-all
+    ${advantage.id === 3 ? 'md:col-span-2 md:max-w-[50%] md:mx-auto lg:col-span-1 lg:max-w-none' : ''}
+  `}
             >
               <div className="w-[57px] h-[54px] rounded-[5px] flex justify-center items-center bg-primary">
                 <Image src={advantage.icon} alt="" width={36} height={37} />

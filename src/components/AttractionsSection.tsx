@@ -111,7 +111,7 @@ export default function AttractionsSection() {
                   alt=".."
                   width={260}
                   height={200}
-                  className="relative z-10 w-full h-full object-cover "
+                  className={`relative z-10 w-full h-full object-cover ${attraction.imgMobile === '/tourist_full.png' ? 'object-top' : ''}`}
                   style={!isMobile ? { clipPath: `url(#img-clip-${attraction.id})` } : undefined}
                 />
               </div>
