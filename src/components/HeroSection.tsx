@@ -18,13 +18,13 @@ export default function HeroSection() {
                         bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
         />
 
-        <div className="absolute top-4 xl:top-[10%] left-1/2 xl:left-[40%]">
+        <div className="absolute top-4 xl:top-[10%] right-[10%] lg:left-1/2 xl:left-[40%]">
           <div
             className="w-10 h-10 2xl:w-14 2xl:h-14 rounded-full
                           bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
           />
           <div
-            className="absolute top-9 left-8 w-5 h-5 2xl:w-7 2xl:h-7 rounded-full
+            className="absolute top-14 left-8 w-5 h-5 2xl:w-7 2xl:h-7 rounded-full
                           bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]"
           />
         </div>
@@ -59,7 +59,7 @@ export default function HeroSection() {
           */}
           <div className="grid grid-cols-1 lg:grid-cols-12 flex-1">
             {/* ── Text content — vertically centered in its column ── */}
-            <div className="order-1 lg:col-span-7 flex items-center justify-center">
+            <div className="order-1 lg:col-span-6 flex items-center justify-center">
               <div
                 className="flex flex-col justify-center items-center  lg:items-start
                               text-center lg:text-left
@@ -117,13 +117,13 @@ export default function HeroSection() {
                 </button>
               </div>
             </div>
-            <div className="order-2 lg:col-span-5 lg:flex lg:items-end">
+            <div className="order-2 lg:col-span-6 lg:flex lg:items-end">
               <Image
                 src="/tropical.png"
                 alt=""
                 width={617}
                 height={604}
-                className="w-full 2xl:w-[700px] 2xl:h-[780px] h-auto"
+                className="w-full 2xl:w-[full] 2xl:h-[780px] 2xl:object-contain h-auto"
                 priority
               />
             </div>
@@ -133,3 +133,28 @@ export default function HeroSection() {
     </section>
   )
 }
+// Image 1 (1024x824 at 100%):
+
+// Layout switches to 2-column (lg breakpoint) ✓
+// Content is on the left ✓
+// But the image is too small and cut off at the bottom - it doesn't fill the height properly
+// There's a lot of empty space at the top between nav and content
+
+// Image 2 (2560x1177 at 50% = CSS 2560x1177):
+
+// Content looks reasonable but image is still too small relative to screen
+// Image doesn't touch the bottom
+// The title wraps in an ugly way ("Your PREMIER" on line 1, "Web" on line 2, "Design Partner in" on line 3, "PALM SPRINGS" on line 4) - this is because at 2xl the font is 74px and the content column is only 7/12 of 1440px = 840px wide
+
+// Image 3 (768x824 at 100%):
+
+// Single column (md breakpoint)
+// Content is NOT centered - it's left-aligned at md
+// Image below is very large and looks decent but too wide/taking up too much space
+// The content needs to be centered at md
+
+// So the main issues are:
+
+// Image too small - needs to be bigger, especially on larger screens
+// Content not centered on md - needs text-center on md too
+// Image doesn't fill height properly - the image anchor-to-bottom approach works but the image itself isn't large enough to visually fill the space
