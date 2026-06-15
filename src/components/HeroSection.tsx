@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="bg-beige overflow-hidden">
       {/* Full-width: stays as positioning context for all circles */}
-      <div className="relative min-h-[calc(100vh-60px)] flex flex-col justify-center">
+      <div className="relative min-h-[calc(100vh-60px)] 2xl:min-h-0 2xl:pt-20 flex flex-col justify-center">
         {/* Decorative circles — relative to full viewport width, untouched */}
         <div className="absolute w-[83.9px] h-[83.9px] left-[10%] md:left-[30%] lg:left-[20%] -bottom-6 2xl:-bottom-10 2xl:left-[35%] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
 
