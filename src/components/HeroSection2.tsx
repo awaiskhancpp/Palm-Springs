@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="bg-beige overflow-hidden">
       {/* Full-width: positioning context for circles. flex-col only, no justify-center */}
-      <div className="relative  xl:min-h-[calc(100vh-60px)] lg:pt-16 xl:pt-0 max-h-screen flex flex-col  ">
+      <div className="relative min-h-[calc(100vh-60px)] max-h-screen flex flex-col  ">
         <div className="absolute w-[83.9px] h-[83.9px] left-[10%] md:left-[30%] lg:left-[20%] -bottom-6 2xl:-bottom-10 2xl:left-[35%] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
         <div className="absolute top-4 xl:top-[10%] left-1/2 xl:left-[40%]">
           <div className="w-10 h-10 rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
@@ -14,7 +14,7 @@ export default function HeroSection() {
         <div className="2xl:hidden absolute -left-16 xl:-left-10 top-2 w-24 h-24 md:w-[100px] md:h-[100px] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
 
         {/* Wrapper: flex-1 fills the outer flex column. justify-center centers grid at sm/md */}
-        <div className="relative w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-center xl:justify-end 2xl:justify-center">
+        <div className="relative w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-end lg:justify-end 2xl:justify-center">
           <div className="absolute top-20 -right-6 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
 
           {/* lg:h-full — grid fills full wrapper height (= full section height) at lg */}

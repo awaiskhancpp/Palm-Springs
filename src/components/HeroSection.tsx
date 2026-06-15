@@ -59,9 +59,9 @@ export default function HeroSection() {
           */}
           <div className="grid grid-cols-1 lg:grid-cols-12 flex-1">
             {/* ── Text content — vertically centered in its column ── */}
-            <div className="order-1 lg:col-span-7 flex items-center">
+            <div className="order-1 lg:col-span-7 flex items-center justify-center">
               <div
-                className="flex flex-col justify-center items-center lg:items-start
+                className="flex flex-col justify-center items-center  lg:items-start
                               text-center lg:text-left
                               gap-4 xl:gap-5 2xl:gap-6
                               px-6 pt-10 pb-6
@@ -107,29 +107,23 @@ export default function HeroSection() {
 
                 <button
                   className="bg-primary mb-4 xl:mb-6 2xl:mb-10
-                                   flex gap-2 items-center
-                                   hover:bg-[#006666] text-white font-avenir-lt font-semibold
-                                   text-[15px] xl:text-[16px] 2xl:text-[18px]
-                                   px-8 py-3 xl:px-10 xl:py-4 2xl:px-12
-                                   rounded-[5px] transition-colors w-fit"
+                    flex gap-2 items-center
+                    hover:bg-[#006666] text-white font-avenir-lt font-semibold
+                    text-[15px] xl:text-[16px] 2xl:text-[18px]
+                    px-8 py-3 xl:px-10 xl:py-4 2xl:px-12
+                    rounded-[5px] transition-colors w-fit"
                 >
                   Read More <Image src="/arrow_white.svg" alt="" width={17} height={14} />
                 </button>
               </div>
             </div>
-
-            {/* ── Image — anchored to the BOTTOM of its column ──
-                lg:flex lg:items-end: makes the full-height grid item a flex container
-                so the image sits flush at the section bottom — zero gap.
-                On mobile (no lg): block, image fills width naturally below text.
-            */}
             <div className="order-2 lg:col-span-5 lg:flex lg:items-end">
               <Image
                 src="/tropical.png"
                 alt=""
                 width={617}
                 height={604}
-                className="w-full h-auto"
+                className="w-full 2xl:w-[700px] 2xl:h-[780px] h-auto"
                 priority
               />
             </div>
