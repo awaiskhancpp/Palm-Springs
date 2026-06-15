@@ -3,43 +3,78 @@ import Image from 'next/image'
 export default function HeroSection() {
   return (
     <section id="home" className="bg-beige overflow-hidden">
-      {/* Full-width: positioning context for circles. flex-col only, no justify-center */}
-      <div className="relative min-h-[calc(100vh-60px)] lg:min-h-[0px] xl:min-h-[calc(100vh-60px)] lg:pt-16 xl:pt-0 max-h-screen flex flex-col  ">
-        <div className="absolute w-[83.9px] h-[83.9px] left-[10%] md:left-[30%] lg:left-[20%] -bottom-6 2xl:-bottom-10 2xl:left-[35%] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
+      {/*
+        OUTER: flex column, min-h kicks in at lg (not xl).
+        Removed: max-h-screen (was fighting the min-h),
+                 xl:min-h (started too late),
+                 lg:pt-16 xl:pt-0 (hack replaced by proper flex alignment)
+      */}
+      <div className="relative lg:min-h-[calc(100vh-60px)] flex flex-col">
+        {/* ── Decorative circles ─────────────────────────── */}
+        <div
+          className="absolute w-[84px] h-[84px] 2xl:w-[110px] 2xl:h-[110px]
+                        left-[10%] md:left-[30%] lg:left-[20%] 2xl:left-[35%]
+                        -bottom-6 rounded-full
+                        bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
+        />
+
         <div className="absolute top-4 xl:top-[10%] left-1/2 xl:left-[40%]">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
-          <div className="absolute top-9 left-8 w-5 h-5 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
+          <div
+            className="w-10 h-10 2xl:w-14 2xl:h-14 rounded-full
+                          bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
+          />
+          <div
+            className="absolute top-9 left-8 w-5 h-5 2xl:w-7 2xl:h-7 rounded-full
+                          bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]"
+          />
         </div>
-        <div className="absolute top-[35%] left-1/2 md:top-[20%] md:left-[70%] lg:top-1/2 lg:left-1/2 w-7 h-7 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
-        <div className="2xl:hidden absolute -left-16 xl:-left-10 top-2 w-24 h-24 md:w-[100px] md:h-[100px] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
 
-        {/* Wrapper: flex-1 fills the outer flex column. justify-center centers grid at sm/md */}
-        <div className="relative w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-center xl:justify-end 2xl:justify-center">
-          <div className="absolute top-20 -right-6 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
+        <div
+          className="absolute top-[35%] left-1/2 md:top-[20%] md:left-[70%]
+                        lg:top-1/2 lg:left-1/2
+                        w-7 h-7 2xl:w-9 2xl:h-9 rounded-full
+                        bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]"
+        />
 
-          {/* lg:h-full — grid fills full wrapper height (= full section height) at lg */}
-          <div className="grid grid-cols-1 lg:grid-cols-12  items-center">
-            {/* lg:self-end — image anchors to bottom of section at lg, killing the bottom gap */}
-            <div className="order-2 lg:order-2 lg:col-span-5 ">
-              <Image
-                src="/tropical.png"
-                alt=""
-                width={617}
-                height={604}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
+        <div
+          className="2xl:hidden absolute -left-16 xl:-left-10 top-2
+                        w-24 h-24 md:w-[100px] md:h-[100px] rounded-full
+                        bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
+        />
 
-            <div className="order-1 lg:order-1 lg:col-span-7">
-              <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-4 px-6 pb-8 lg:pb-0 lg:pl-[8%] lg:pr-8">
+        {/* ── Inner max-width container ───────────────────
+            flex-1: grows to fill the outer flex column's height
+        */}
+        <div className="relative w-full max-w-[1440px] mx-auto flex-1 flex flex-col">
+          <div
+            className="absolute top-20 -right-6
+                          w-8 h-8 md:w-12 md:h-12 2xl:w-16 2xl:h-16
+                          bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full"
+          />
+
+          {/*
+            GRID: flex-1 → stretches to fill inner container height (= section height on lg+)
+            Grid items default to align-self: stretch so both columns are full-height.
+            Each column then uses its own flex alignment for content positioning.
+          */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 flex-1">
+            {/* ── Text content — vertically centered in its column ── */}
+            <div className="order-1 lg:col-span-7 flex items-center">
+              <div
+                className="flex flex-col justify-center items-center lg:items-start
+                              text-center lg:text-left
+                              gap-4 xl:gap-5 2xl:gap-6
+                              px-6 pt-10 pb-6
+                              lg:py-0 lg:pl-[8%] lg:pr-8"
+              >
                 <div className="inline-flex items-center border border-[#232323] rounded-full px-5 py-2 w-fit">
-                  <span className="font-avenir-lt font-extralight text-[13px] text-[#232323]">
+                  <span className="font-avenir-lt font-extralight text-[13px] xl:text-[14px] 2xl:text-[16px] text-[#232323]">
                     Welcome to 1REALTOUR.com
                   </span>
                 </div>
 
-                <h1 className="font-futura-black text-[36px] sm:text-[42px] lg:text-[50px] xl:text-[56px] leading-[1.2]">
+                {/* Font scales: 36 → 44 → 50 → 60 → 74px */}
+                <h1 className="font-futura-black text-[36px] sm:text-[44px] lg:text-[50px] xl:text-[60px] 2xl:text-[74px] leading-[1.15]">
                   <span className="text-primary">Your </span>
                   <span
                     className="text-secondary uppercase"
@@ -60,15 +95,43 @@ export default function HeroSection() {
                   </span>
                 </h1>
 
-                <p className="font-avenir-lt font-extralight text-[14px] md:text-[16px] text-[#333333] leading-7 max-w-[440px]">
+                <p
+                  className="font-avenir-lt font-extralight
+                              text-[14px] md:text-[16px] xl:text-[17px] 2xl:text-[20px]
+                              text-[#333333] leading-7 xl:leading-8 2xl:leading-9
+                              max-w-[440px] xl:max-w-[500px] 2xl:max-w-[600px]"
+                >
                   At 1REALTOUR.com, we understand the unique charm and vibrant culture of Palm
                   Springs, California.
                 </p>
 
-                <button className="bg-primary mb-4 xl:mb-10 flex gap-2 items-center hover:bg-[#006666] text-white font-avenir-lt font-semibold text-[15px] px-8 py-3 rounded-[5px] transition-colors w-fit">
+                <button
+                  className="bg-primary mb-4 xl:mb-6 2xl:mb-10
+                                   flex gap-2 items-center
+                                   hover:bg-[#006666] text-white font-avenir-lt font-semibold
+                                   text-[15px] xl:text-[16px] 2xl:text-[18px]
+                                   px-8 py-3 xl:px-10 xl:py-4 2xl:px-12
+                                   rounded-[5px] transition-colors w-fit"
+                >
                   Read More <Image src="/arrow_white.svg" alt="" width={17} height={14} />
                 </button>
               </div>
+            </div>
+
+            {/* ── Image — anchored to the BOTTOM of its column ──
+                lg:flex lg:items-end: makes the full-height grid item a flex container
+                so the image sits flush at the section bottom — zero gap.
+                On mobile (no lg): block, image fills width naturally below text.
+            */}
+            <div className="order-2 lg:col-span-5 lg:flex lg:items-end">
+              <Image
+                src="/tropical.png"
+                alt=""
+                width={617}
+                height={604}
+                className="w-full h-auto"
+                priority
+              />
             </div>
           </div>
         </div>
