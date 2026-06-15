@@ -14,7 +14,7 @@ export default function HeroSection() {
         <div className="2xl:hidden absolute -left-16 xl:-left-10 top-2 w-24 h-24 md:w-[100px] md:h-[100px] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
 
         {/* Wrapper: flex-1 fills the outer flex column. justify-center centers grid at sm/md */}
-        <div className="relative w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-center xl:justify-end 2xl:justify-center">
+        <div className="relative w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-end xl:justify-end 2xl:justify-center">
           <div className="absolute top-20 -right-6 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
 
           {/* lg:h-full — grid fills full wrapper height (= full section height) at lg */}
