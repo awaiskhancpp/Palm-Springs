@@ -4,7 +4,7 @@ export default function MidCenturySection() {
   return (
     <section
       id="about"
-      className="relative w-full bg-[#0080801A] py-16  lg:py-30 overflow-hidden z-10"
+      className="relative w-full bg-[#0080801A] pt-16 lg:py-30 overflow-hidden z-10"
     >
       <Image
         src="/tree_right.png"
@@ -17,20 +17,20 @@ export default function MidCenturySection() {
       <div className="relative max-w-[1240px] w-[95%] mx-auto">
         <div className="2xl:hidden block absolute -right-32 bottom-0 w-[77.72px] h-[77.72px] rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
         <div className=" absolute top-[84%] -left-3 md:left-10 lg:-left-10 lg:bottom-12 w-[99px] h-[99px] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-0 lg:gap-5 xl:gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-5 lg:gap-5 xl:gap-0">
           {/* Left Image Section */}
           <div className="order-2 lg:order-1 relative w-full">
             <div className="relative w-full ">
               {/* Border Frame */}
               <div className="hidden lg:block absolute left-4 sm:left-1 md:left-2 lg:left-18 xl:left-16 top-8 sm:top-8 md:top-10 lg:top-12 xl:top-14 w-[70%] sm:w-[90%] md:w-[400px] lg:w-[400px] xl:w-[500px] h-[75%] sm:h-[85%] md:h-[340px] lg:h-[400px] xl:h-[460px] rounded-3xl border-[5px] border-[#FFA500] z-0" />
               {/* Image */}
-              <div className="relative z-10 ">
+              <div className="relative z-40 ">
                 <Image
                   src="/person-drawing.png"
                   alt="person working"
                   width={560}
                   height={500}
-                  className="w-full lg:max-w-[560px] h-auto rounded-2xl"
+                  className="w-full lg:max-w-[560px] z-60 h-auto rounded-2xl"
                 />
               </div>
             </div>
