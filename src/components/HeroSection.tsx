@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="bg-beige overflow-hidden">
       {/* Full-width: positioning context for circles. flex-col only, no justify-center */}
-      <div className="relative min-h-[calc(100vh-60px)] 2xl:min-h-0 2xl:pt-20 flex flex-col">
+      <div className="relative min-h-[calc(100vh-60px)] 2xl:min-h-0 2xl:pt-20 flex flex-col ">
         <div className="absolute w-[83.9px] h-[83.9px] left-[10%] md:left-[30%] lg:left-[20%] -bottom-6 2xl:-bottom-10 2xl:left-[35%] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
         <div className="absolute top-4 xl:top-[10%] left-1/2 xl:left-[40%]">
           <div className="w-10 h-10 rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
@@ -14,7 +14,7 @@ export default function HeroSection() {
         <div className="2xl:hidden absolute -left-16 xl:-left-10 top-2 w-24 h-24 md:w-[100px] md:h-[100px] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
 
         {/* Wrapper: flex-1 fills the outer flex column. justify-center centers grid at sm/md */}
-        <div className="relative w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-center">
+        <div className="relative w-full max-w-[1440px] mx-auto lg:flex-1 flex flex-col lg:justify-center">
           <div className="absolute top-20 -right-6 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
 
           {/* lg:h-full — grid fills full wrapper height (= full section height) at lg */}
@@ -31,8 +31,8 @@ export default function HeroSection() {
               />
             </div>
 
-            <div className="order-1 lg:order-1 lg:col-span-7 ">
-              <div className="flex flex-col justify-center items-center lg:items-start text-center mt-10 lg:mt-0 lg:text-left gap-4 px-6 pb-8 lg:pb-0 lg:pl-[8%] lg:pr-8">
+            <div className="order-1 lg:order-1 lg:col-span-7  ">
+              <div className="flex flex-col justify-center items-center  lg:items-start text-center lg:text-left gap-4 px-6 lg:pb-0 lg:pl-[8%] lg:pr-8">
                 <div className="inline-flex items-center border border-[#232323] rounded-full px-5 py-2 w-fit">
                   <span className="font-avenir-lt font-extralight text-[13px] text-[#232323]">
                     Welcome to 1REALTOUR.com
