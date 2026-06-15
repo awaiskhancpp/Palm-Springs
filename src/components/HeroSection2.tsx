@@ -1,29 +1,26 @@
 import Image from 'next/image'
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <section id="home" className="bg-beige overflow-hidden">
       {/* Full-width: positioning context for circles. flex-col only, no justify-center */}
-      <div className="relative min-h-[calc(100vh-64px)] lg:min-h-0 xl:min-h-[calc(100vh-64px)] md:pt-16 lg:pt-0 2xl:min-h-0 2xl:pt-20 flex flex-col justify-end">
+      <div className="relative min-h-[calc(100vh-60px)] max-h-screen flex flex-col  ">
         <div className="absolute w-[83.9px] h-[83.9px] left-[10%] md:left-[30%] lg:left-[20%] -bottom-6 2xl:-bottom-10 2xl:left-[35%] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
-
         <div className="absolute top-4 xl:top-[10%] left-1/2 xl:left-[40%]">
           <div className="w-10 h-10 rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
           <div className="absolute top-9 left-8 w-5 h-5 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
         </div>
-
         <div className="absolute top-[35%] left-1/2 md:top-[20%] md:left-[70%] lg:top-1/2 lg:left-1/2 w-7 h-7 rounded-full bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]" />
-
         <div className="2xl:hidden absolute -left-16 xl:-left-10 top-2 w-24 h-24 md:w-[100px] md:h-[100px] rounded-full bg-gradient-to-b from-[#FFA500] to-[#EA7000]" />
 
-        {/* Wrapper */}
-        <div className="relative w-full max-w-[1440px] mx-auto lg:flex-1 flex flex-col justify-center lg:justify-end xl:justify-center">
+        {/* Wrapper: flex-1 fills the outer flex column. justify-center centers grid at sm/md */}
+        <div className="relative w-full max-w-[1440px] mx-auto flex-1 flex flex-col justify-end lg:justify-end 2xl:justify-center">
           <div className="absolute top-20 -right-6 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full" />
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 lg:h-full items-center">
-            {/* Image */}
-            <div className="order-2 lg:order-2 lg:col-span-5 lg:self-end">
+          {/* lg:h-full — grid fills full wrapper height (= full section height) at lg */}
+          <div className="grid grid-cols-1 lg:grid-cols-12  items-center">
+            {/* lg:self-end — image anchors to bottom of section at lg, killing the bottom gap */}
+            <div className="order-2 lg:order-2 lg:col-span-5 ">
               <Image
                 src="/tropical.png"
                 alt=""
@@ -34,9 +31,8 @@ export default function Hero() {
               />
             </div>
 
-            {/* Content */}
             <div className="order-1 lg:order-1 lg:col-span-7">
-              <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-4 px-6 lg:pb-0 lg:pl-[8%] lg:pr-8 pt-12  lg:pt-0">
+              <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-4 px-6 pb-8 lg:pb-0 lg:pl-[8%] lg:pr-8">
                 <div className="inline-flex items-center border border-[#232323] rounded-full px-5 py-2 w-fit">
                   <span className="font-avenir-lt font-extralight text-[13px] text-[#232323]">
                     Welcome to 1REALTOUR.com
@@ -70,8 +66,7 @@ export default function Hero() {
                 </p>
 
                 <button className="bg-primary mb-4 xl:mb-10 flex gap-2 items-center hover:bg-[#006666] text-white font-avenir-lt font-semibold text-[15px] px-8 py-3 rounded-[5px] transition-colors w-fit">
-                  Read More
-                  <Image src="/arrow_white.svg" alt="" width={17} height={14} />
+                  Read More <Image src="/arrow_white.svg" alt="" width={17} height={14} />
                 </button>
               </div>
             </div>
