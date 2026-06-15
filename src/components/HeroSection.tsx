@@ -123,7 +123,7 @@ export default function HeroSection() {
                 alt=""
                 width={617}
                 height={604}
-                className="w-full 2xl:w-[full] 2xl:h-[780px] 2xl:object-contain h-auto"
+                className="w-full 2xl:w-[full] 2xl:h-[780px] lg:h-[620px] 2xl:object-contain h-auto"
                 priority
               />
             </div>
