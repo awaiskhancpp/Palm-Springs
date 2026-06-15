@@ -163,13 +163,13 @@ export default function ServingCitiesSection() {
                     width={60}
                     height={60}
                   />
-                  <h3
+                  <h4
                     className={`font-futura-bt text-[14px] font-normal whitespace-nowrap md:text-[22px] ${
                       selectedCity === city.id ? 'text-white' : 'text-[#102039]'
                     }`}
                   >
                     {city.name}
-                  </h3>
+                  </h4>
                 </div>
               </div>
             ))}
@@ -204,7 +204,7 @@ export default function ServingCitiesSection() {
             <div className="order-1 lg:order-2 flex justify-end relative w-full lg:w-auto">
               <div
                 key={`img-${selectedCity}`}
-                className="w-full lg:max-w-md rounded-3xl overflow-hidden animate-slideIn"
+                className="w-full lg:max-w-md rounded-3xl mb-3 lg:mb-0 overflow-hidden animate-slideIn"
               >
                 <Image
                   src="/cathedral.png"

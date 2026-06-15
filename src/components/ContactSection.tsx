@@ -41,7 +41,7 @@ export default function ContactSection() {
         {/* Form Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:max-w-[1254px] mx-auto gap-3 items-center">
           {/* Left Illustration */}
-          <div className="flex justify-center w-full lg:w-auto">
+          <div className="flex justify-center w-full lg:w-auto mb-3">
             <div className="w-full lg:max-w-[611px] rounded-3xl">
               <Image
                 src="/contact_us.png"
@@ -160,7 +160,7 @@ export default function ContactSection() {
           </form>
         </div>
         <div className=" absolute right-0 -bottom-15 xl:-bottom-10">
-          <div className="bg-radial from-[#00B8B8] to-[#008080] rounded-full ml-8 w-5 h-5" />
+          <div className="bg-radial from-[#00B8B8] to-primary rounded-full ml-8 w-5 h-5" />
           <div className="bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full w-10 h-10 mt-2" />
         </div>
         <div className=" absolute -bottom-30 left-[20%] bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full w-20 h-20" />

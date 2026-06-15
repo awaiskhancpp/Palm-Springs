@@ -61,7 +61,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonial" className="w-full bg-[#F5F5DC] pt-16 pb-28 lg:pb-0 overflow-hidden">
+    <section id="testimonial" className="w-full bg-[#F5F5DC] pt-16 lg:pb-0 overflow-hidden">
       <div className="relative max-w-[1440px] mx-auto">
         <div className="absolute -right-14 -top-15 md:top-2 md:-right-16 lg:top-8 lg:-right-14 xl:-right-12 xl:top-14 w-[80px] h-[80px] z-10 ">
           <div className="absolute w-[20.39px] h-[20.39px] -left-10 top-10 rounded-full rotate-[81.06deg] bg-[radial-gradient(circle_at_50%_50%,#00B8B8_0%,#008080_100%)]" />
