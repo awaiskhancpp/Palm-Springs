@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 export const Contact: CollectionConfig = {
-  slug: 'contact-submissions',
+  slug: 'contact',
   admin: {
     useAsTitle: 'name',
   },
