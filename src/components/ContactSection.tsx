@@ -13,6 +13,46 @@ export default function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toasts, showToast, removeToast } = useToast()
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const validateForm = () => {
+    const errors: Record<string, string> = {}
+
+    // Name validation
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required'
+    } else if (formData.name.trim().length < 2) {
+      errors.name = 'Name must be at least 2 characters'
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required'
+    } else if (!emailRegex.test(formData.email)) {
+      errors.email = 'Please enter a valid email'
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      errors.message = 'Message is required'
+    } else if (formData.message.trim().length < 10) {
+      errors.message = 'Message must be at least 10 characters'
+    }
+
+    // Phone validation (same logic as backend)
+    if (formData.phone.trim()) {
+      const digitsOnly = formData.phone.replace(/\D/g, '')
+
+      const isValid =
+        digitsOnly.length === 10 || (digitsOnly.length === 11 && digitsOnly.startsWith('1'))
+
+      if (!isValid) {
+        errors.phone = 'Enter a valid US phone number'
+      }
+    }
+
+    return errors
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -24,14 +64,22 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    const validationErrors = validateForm()
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      showToast('Please fix the errors in the form', 'error')
+      return
+    }
+
+    setErrors({})
     setIsSubmitting(true)
 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
 
@@ -39,12 +87,11 @@ export default function ContactSection() {
 
       if (!response.ok) {
         showToast(data.error || 'Failed to submit form', 'error')
-        setIsSubmitting(false)
         return
       }
 
-      // Success
       showToast('Thank you! Your message has been sent successfully.', 'success')
+
       setFormData({
         name: '',
         email: '',
@@ -54,7 +101,6 @@ export default function ContactSection() {
       })
     } catch (error) {
       showToast('An error occurred. Please try again.', 'error')
-      console.error('Form submission error:', error)
     } finally {
       setIsSubmitting(false)
     }
@@ -111,6 +157,7 @@ export default function ContactSection() {
                     className="font-avenir-lt bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#008080] focus:ring-2 focus:ring-[#008080] focus:ring-opacity-20"
                     required
                   />
+                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                 </div>
                 <div className="flex flex-col gap-2">
                   <label
@@ -129,6 +176,7 @@ export default function ContactSection() {
                     className="font-avenir-lt bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#008080] focus:ring-2 focus:ring-[#008080] focus:ring-opacity-20"
                     required
                   />
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
               </div>
 
@@ -149,6 +197,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     className="font-avenir-lt px-4 bg-white py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#008080] focus:ring-2 focus:ring-[#008080] focus:ring-opacity-20"
                   />
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                 </div>
 
                 <div className="flex flex-col gap-2">
@@ -187,6 +236,7 @@ export default function ContactSection() {
                   className="font-avenir-lt px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-[#008080] focus:ring-2 focus:ring-[#008080] focus:ring-opacity-20 resize-none"
                   required
                 />
+                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
               </div>
 
               <button
