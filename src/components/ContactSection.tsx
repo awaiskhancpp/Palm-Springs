@@ -25,11 +25,11 @@ export default function ContactSection() {
     }
 
     // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
     if (!formData.email.trim()) {
       errors.email = 'Email is required'
     } else if (!emailRegex.test(formData.email)) {
-      errors.email = 'Please enter a valid email'
+      errors.email = 'Email must include a valid domain (example: .com)'
     }
 
     // Message validation
@@ -56,10 +56,26 @@ export default function ContactSection() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }))
+
+    // live email validation
+    if (name === 'email') {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+
+      setErrors((prev) => ({
+        ...prev,
+        email:
+          value.trim().length === 0
+            ? 'Email is required'
+            : !emailRegex.test(value)
+              ? 'Enter a valid email (must include domain like .com)'
+              : '',
+      }))
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
