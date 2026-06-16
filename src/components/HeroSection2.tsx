@@ -1,129 +1,141 @@
 import Image from 'next/image'
 
-export default function HeroSection() {
+const premierShadow = { textShadow: '0 4px 0 #0a5858' } as const
+
+export default function Hero() {
   return (
     <section id="home" className="bg-beige overflow-hidden">
       {/*
-        OUTER: flex column, min-h kicks in at lg (not xl).
-        Removed: max-h-screen (was fighting the min-h),
-                 xl:min-h (started too late),
-                 lg:pt-16 xl:pt-0 (hack replaced by proper flex alignment)
+        Figma hero frame (node 8:74): 1440 × 722px including nav.
+        Navbar is a separate component (~60px), so hero min-height ≈ 662px at 1440.
       */}
-      <div className="relative lg:min-h-[calc(100vh-60px)] flex flex-col">
-        {/* ── Decorative circles ─────────────────────────── */}
+      <div className="relative min-h-[clamp(520px,50.14vw,662px)] flex flex-col">
+        {/* ── Decorative circles (Figma nodes 8:266, 8:274, 8:275, 8:273, 8:832) ── */}
+
+        {/* Large orange — bleeds off top-left (8:266: 99px @ left -38, top 108) */}
         <div
-          className="absolute w-[84px] h-[84px] 2xl:w-[110px] 2xl:h-[110px]
-                        left-[10%] md:left-[30%] lg:left-[20%] 2xl:left-[35%]
-                        -bottom-6 rounded-full
-                        bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
+          className="absolute -left-[5%] top-[8%] w-[clamp(72px,6.9vw,99px)] h-[clamp(72px,6.9vw,99px)] rounded-full
+                     bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
+          aria-hidden="true"
         />
 
-        <div className="absolute top-4 xl:top-[10%] right-[10%] lg:left-1/2 xl:left-[40%]">
-          <div
-            className="w-10 h-10 2xl:w-14 2xl:h-14 rounded-full
-                          bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
-          />
-          <div
-            className="absolute top-14 left-8 w-5 h-5 2xl:w-7 2xl:h-7 rounded-full
-                          bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]"
-          />
-        </div>
-
+        {/* Large orange — bleeds up from section below (8:832: 313px glow @ left 36%, top 848) */}
         <div
-          className="absolute top-[35%] left-1/2 md:top-[20%] md:left-[70%]
-                        lg:top-1/2 lg:left-1/2
-                        w-7 h-7 2xl:w-9 2xl:h-9 rounded-full
-                        bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]"
+          className="absolute left-[36%] -bottom-[6%] w-[83px] h-[83px] rounded-full
+                     bg-gradient-to-b from-[#FFA500] to-[#EA7000] opacity-90"
+          aria-hidden="true"
         />
 
+        {/* Orange dot — center-top (8:274: 41px @ 47.5%, top 98) */}
         <div
-          className="2xl:hidden absolute -left-16 xl:-left-10 top-2
-                        w-24 h-24 md:w-[100px] md:h-[100px] rounded-full
-                        bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
+          className="absolute left-[42.5%] top-[13.5%] w-[clamp(28px,2.83vw,41px)] h-[clamp(28px,2.83vw,41px)] rounded-full
+                     bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
+          aria-hidden="true"
         />
 
-        {/* ── Inner max-width container ───────────────────
-            flex-1: grows to fill the outer flex column's height
-        */}
+        {/* Teal dot — upper-mid (8:275: 20px @ 49.8%, top 151) */}
+        <div
+          className="absolute left-[44.8%] top-[20.9%] w-[clamp(14px,1.42vw,20px)] h-[clamp(14px,1.42vw,20px)] rounded-full
+                     bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]"
+          aria-hidden="true"
+        />
+
+        {/* Teal dot — mid (8:273: 28px @ 54%, top 424) */}
+        <div
+          className="absolute left-[54%] top-[58.7%] w-[clamp(20px,1.98vw,28px)] h-[clamp(20px,1.98vw,28px)] rounded-full
+                     bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]"
+          aria-hidden="true"
+        />
+
         <div className="relative w-full max-w-[1440px] mx-auto flex-1 flex flex-col">
           <div
             className="absolute top-20 -right-6
-                          w-8 h-8 md:w-12 md:h-12 2xl:w-16 2xl:h-16
-                          bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full"
+                       w-8 h-8 md:w-12 md:h-12 2xl:w-16 2xl:h-16
+                       bg-gradient-to-b from-[#FFA500] to-[#EA7000] rounded-full"
           />
-
-          {/*
-            GRID: flex-1 → stretches to fill inner container height (= section height on lg+)
-            Grid items default to align-self: stretch so both columns are full-height.
-            Each column then uses its own flex alignment for content positioning.
-          */}
           <div className="grid grid-cols-1 lg:grid-cols-12 flex-1">
-            {/* ── Text content — vertically centered in its column ── */}
+            {/* Text column — Figma content x ≈ 102px (7.07% of 1440) */}
             <div className="order-1 lg:col-span-6 flex items-center justify-center">
               <div
-                className="flex flex-col justify-center items-center  lg:items-start
-                              text-center lg:text-left
-                              gap-4 xl:gap-5 2xl:gap-6
-                              px-6 pt-10 pb-6
-                              lg:py-0 lg:pl-[8%] lg:pr-8"
+                className="relative z-10 flex flex-col justify-center items-center lg:items-start
+                           text-center lg:text-left
+                           gap-[clamp(18px,2.1vw,30px)]
+                           px-6 pt-8 pb-6
+                           lg:py-0 lg:pl-[7.07%] lg:pr-8"
               >
-                <div className="inline-flex items-center border border-[#232323] rounded-full px-5 py-2 w-fit">
-                  <span className="font-avenir-lt font-extralight text-[13px] xl:text-[14px] 2xl:text-[16px] text-[#232323]">
+                {/* Badge (8:81): px 40, py 10, radius 90, text 24px */}
+                <div
+                  className="inline-flex items-center border border-[#232323] rounded-full
+                             px-[clamp(20px,2.78vw,40px)] py-[clamp(6px,0.69vw,10px)] w-fit"
+                >
+                  <span
+                    className="font-avenir-lt font-extralight text-[#232323]
+                               text-[clamp(13px,1.67vw,24px)] leading-[clamp(18px,1.94vw,28px)]"
+                  >
                     Welcome to 1REALTOUR.com
                   </span>
                 </div>
 
-                {/* Font scales: 36 → 44 → 50 → 60 → 74px */}
-                <h1 className="font-futura-black text-[36px] sm:text-[44px] lg:text-[50px] xl:text-[60px] 2xl:text-[74px] leading-[1.15]">
-                  <span className="text-primary">Your </span>
-                  <span
-                    className="text-secondary uppercase"
-                    style={{ textShadow: '4px 4px 0 #008080' }}
-                  >
-                    PREMIER
+                {/*
+                  H1 (8:83–8:88): 66px / 79px lh at 1440.
+                  Premier & Springs are orange layers over #0a5858 shadow offset.
+                */}
+                <h1
+                  className="font-futura-black text-[clamp(32px,4.58vw,66px)]
+                             leading-[clamp(38px,5.49vw,79px)]"
+                >
+                  <span className="whitespace-nowrap">
+                    <span className="text-primary">Your </span>
+                    <span className="text-secondary uppercase" style={premierShadow}>
+                      PREMIER
+                    </span>
+                    <span className="text-primary"> Web</span>
                   </span>
-                  <span className="text-primary"> Web</span>
                   <br />
                   <span className="text-primary">Design Partner in</span>
                   <br />
                   <span className="text-[#FF8394]">PALM </span>
-                  <span
-                    className="text-secondary uppercase"
-                    style={{ textShadow: '4px 4px 0 #008080' }}
-                  >
+                  <span className="text-secondary uppercase" style={premierShadow}>
                     SPRINGS
                   </span>
                 </h1>
 
+                {/* Body (8:89): 18px / 28px lh, max 636px */}
                 <p
-                  className="font-avenir-lt font-extralight
-                              text-[14px] md:text-[16px] xl:text-[17px] 2xl:text-[20px]
-                              text-[#333333] leading-7 xl:leading-8 2xl:leading-9
-                              max-w-[440px] xl:max-w-[500px] 2xl:max-w-[600px]"
+                  className="font-avenir-lt font-extralight text-[#333333]
+                             text-[clamp(14px,1.25vw,18px)] leading-[clamp(22px,1.94vw,28px)]
+                             max-w-[636px]"
                 >
                   At 1REALTOUR.com, we understand the unique charm and vibrant culture of Palm
                   Springs, California.
                 </p>
 
+                {/* CTA (8:90): px 40, py 14, gap 10, radius 5, text 18px */}
                 <button
-                  className="bg-primary mb-4 xl:mb-6 2xl:mb-10
-                    flex gap-2 items-center
-                    hover:bg-[#006666] text-white font-avenir-lt font-semibold
-                    text-[15px] xl:text-[16px] 2xl:text-[18px]
-                    px-8 py-3 xl:px-10 xl:py-4 2xl:px-12
-                    rounded-[5px] transition-colors w-fit"
+                  type="button"
+                  className="bg-primary flex items-center gap-[10px]
+                             hover:bg-[#006666] text-white font-avenir-lt font-semibold
+                             text-[clamp(15px,1.25vw,18px)] leading-[28px]
+                             px-[clamp(24px,2.78vw,40px)] py-[clamp(10px,0.97vw,14px)]
+                             rounded-[5px] transition-colors w-fit mb-2 lg:mb-0"
                 >
                   Read More <Image src="/arrow_white.svg" alt="" width={17} height={14} />
                 </button>
               </div>
             </div>
-            <div className="order-2 lg:col-span-6 lg:flex lg:items-end">
+
+            {/*
+              Illustration (8:258): 617 × 605px, right-aligned, top ≈ 108px in Figma frame.
+              Mobile: aspect-ratio spacer; desktop: fill column, anchor bottom.
+            */}
+            <div className="order-2 lg:col-span-6 relative">
+              <div className="w-full aspect-[617/605] lg:hidden" aria-hidden="true" />
               <Image
                 src="/tropical.png"
-                alt=""
-                width={617}
-                height={604}
-                className="w-full 2xl:w-[full] 2xl:h-[780px] lg:h-[620px] 2xl:object-contain h-auto"
+                alt="Tropical Palm Springs illustration"
+                fill
+                className="object-contain object-bottom lg:object-right-bottom"
+                sizes="(max-width: 1023px) 100vw, 617px"
                 priority
               />
             </div>
@@ -133,28 +145,3 @@ export default function HeroSection() {
     </section>
   )
 }
-// Image 1 (1024x824 at 100%):
-
-// Layout switches to 2-column (lg breakpoint) ✓
-// Content is on the left ✓
-// But the image is too small and cut off at the bottom - it doesn't fill the height properly
-// There's a lot of empty space at the top between nav and content
-
-// Image 2 (2560x1177 at 50% = CSS 2560x1177):
-
-// Content looks reasonable but image is still too small relative to screen
-// Image doesn't touch the bottom
-// The title wraps in an ugly way ("Your PREMIER" on line 1, "Web" on line 2, "Design Partner in" on line 3, "PALM SPRINGS" on line 4) - this is because at 2xl the font is 74px and the content column is only 7/12 of 1440px = 840px wide
-
-// Image 3 (768x824 at 100%):
-
-// Single column (md breakpoint)
-// Content is NOT centered - it's left-aligned at md
-// Image below is very large and looks decent but too wide/taking up too much space
-// The content needs to be centered at md
-
-// So the main issues are:
-
-// Image too small - needs to be bigger, especially on larger screens
-// Content not centered on md - needs text-center on md too
-// Image doesn't fill height properly - the image anchor-to-bottom approach works but the image itself isn't large enough to visually fill the space

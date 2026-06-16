@@ -137,25 +137,7 @@ export default function HeroSection() {
                 </button>
               </div>
             </div>
-
-            {/* ── RIGHT: Tropical image ────────────────────────────────
-              fill + spacer pattern eliminates the bottom-gap problem entirely.
-
-              Mobile (< lg):
-                • `relative` on the cell + spacer div with aspect-[617/604]
-                  gives the cell its height (natural image ratio).
-                • `fill` Image covers that space exactly.
-                • Spacer is hidden on lg+.
-
-              lg+ (two-column):
-                • CSS Grid default align-self:stretch makes the cell height
-                  equal the row height (= the taller text column ≥ 100vh-60px).
-                • `fill` Image covers the full cell.
-                • object-contain → full illustration, never cropped.
-                • object-bottom → image anchors to the section foot → ZERO gap.
-            */}
-            <div className="order-2 lg:col-span-6 relative">
-              {/* Mobile height donor — 617:604 matches tropical.png native ratio */}
+            <div className="">
               <div className="w-full aspect-[617/604] lg:hidden" aria-hidden="true" />
               <Image
                 src="/tropical.png"
