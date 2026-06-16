@@ -9,7 +9,7 @@ export default function Hero() {
         Figma hero frame (node 8:74): 1440 × 722px including nav.
         Navbar is a separate component (~60px), so hero min-height ≈ 662px at 1440.
       */}
-      <div className="relative min-h-[clamp(520px,50.14vw,723px)] flex flex-col">
+      <div className="relative min-h-[clamp(520px,50.14vw,760px)] flex flex-col">
         {/* ── Decorative circles (Figma nodes 8:266, 8:274, 8:275, 8:273, 8:832) ── */}
 
         {/* Large orange — bleeds off top-left (8:266: 99px @ left -38, top 108) */}
