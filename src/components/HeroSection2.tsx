@@ -9,7 +9,7 @@ export default function Hero() {
         Figma hero frame (node 8:74): 1440 × 722px including nav.
         Navbar is a separate component (~60px), so hero min-height ≈ 662px at 1440.
       */}
-      <div className="relative min-h-[clamp(520px,50.14vw,662px)] flex flex-col">
+      <div className="relative min-h-[clamp(520px,50.14vw,723px)] flex flex-col">
         {/* ── Decorative circles (Figma nodes 8:266, 8:274, 8:275, 8:273, 8:832) ── */}
 
         {/* Large orange — bleeds off top-left (8:266: 99px @ left -38, top 108) */}
@@ -28,14 +28,14 @@ export default function Hero() {
 
         {/* Orange dot — center-top (8:274: 41px @ 47.5%, top 98) */}
         <div
-          className="absolute left-[42.5%] top-[13.5%] w-[clamp(28px,2.83vw,41px)] h-[clamp(28px,2.83vw,41px)] rounded-full
+          className="absolute right-20 lg:left-[42.5%] top-[6%] lg:top-[13.5%] w-[clamp(28px,2.83vw,41px)] h-[clamp(28px,2.83vw,41px)] rounded-full
                      bg-gradient-to-b from-[#FFA500] to-[#EA7000]"
           aria-hidden="true"
         />
 
         {/* Teal dot — upper-mid (8:275: 20px @ 49.8%, top 151) */}
         <div
-          className="absolute left-[44.8%] top-[20.9%] w-[clamp(14px,1.42vw,20px)] h-[clamp(14px,1.42vw,20px)] rounded-full
+          className="absolute right-20 lg:left-[44.8%] top-[10%] lg:top-[20.9%] w-[clamp(14px,1.42vw,20px)] h-[clamp(14px,1.42vw,20px)] rounded-full
                      bg-[radial-gradient(circle,_#00B8B8_0%,_#008080_100%)]"
           aria-hidden="true"
         />
